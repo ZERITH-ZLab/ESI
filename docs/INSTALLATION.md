@@ -2,6 +2,20 @@
 
 本指南把 ESI 的源码、模拟器和 OpenPI 分开安装。命令中的路径由部署者选择；示例仅用于说明目录关系。所有实验输出、权重、资产和下载缓存建议放在大容量存储。不要在正在运行的实验所用外部源码或 Python 环境中执行升级。
 
+## 基础环境与容器
+
+推荐从 **Linux x86_64、Ubuntu 22.04、CUDA Toolkit 12.8** 开始安装。容器建议选择 `devel` 类型以提供编译工具，再按下文创建 Python 3.11 环境并安装依赖；仅有 CUDA 基础镜像不能直接运行 ESI。
+
+Isaac Sim 5.1.0 的 pip 安装要求 Python 3.11 和 glibc ≥2.35。其官方系统列表也包括 Ubuntu 24.04，但这不等于任意 Ubuntu 24.04 镜像均可直接使用本安装配方。见 [Isaac Sim Python 安装要求](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/install_python.html)。
+
+模拟器节点需要支持 RTX 渲染的 GPU；无 RT Cores 的 A100/H100 不在 Isaac Sim 的支持范围内。模型推理和训练可部署在独立的计算 GPU 节点。驱动版本应同时满足所选 GPU、CUDA 和 Isaac Sim 的兼容要求，参照 [Isaac Sim 硬件与驱动要求](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/requirements.html)选择，不要只按 JAX 的最低驱动要求配置模拟器。
+
+CUDA Toolkit、Python 包的 CUDA 运行库和宿主机驱动是不同组件。本安装配方的模拟器环境使用 PyTorch cu128，OpenPI 使用 JAX CUDA 12 包；它们可安装各自的运行库，不要求全部链接系统 Toolkit。宿主机仍必须提供兼容的 NVIDIA 驱动，安装容器内的 CUDA 包不能替代驱动。
+
+使用 Docker 时，宿主机需安装 NVIDIA Container Toolkit，并在创建容器时分配 GPU，例如使用 `--gpus`。模拟器容器还需传入 `NVIDIA_DRIVER_CAPABILITIES=compute,utility,graphics`；使用 GPU 视频编解码或窗口显示时分别增加 `video` 或 `display`。只开放计算能力不足以支持相机渲染，headless 模式也需要图形支持。详见 [NVIDIA 容器 GPU 与驱动能力配置](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/docker-specialized.html)。
+
+安装前检查 `ldd --version`、`nvcc --version` 和 `nvidia-smi`；容器内也应能看到分配的 GPU。`nvidia-smi` 显示的 CUDA 版本表示驱动支持能力，不等于已安装的 Toolkit 版本。依赖安装后再验证模拟器相机渲染和 π05 推理，两者分别通过后开始完整评测。
+
 ## 推荐参考布局
 
 下面的布局与默认部署路径对应。先确保这些目录由部署用户读写；没有 `/opt` 或 `/mnt` 写权限时可以整体换到自己的目录，再修改 `configs/deployment.local.json`。路径不是用户名或硬件要求。

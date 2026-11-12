@@ -2,6 +2,19 @@
 
 ESI 将 LLM 规划与 VLA 策略结合，通过采集、子任务标注与训练持续改进系统。
 
+## 基础环境
+
+| 项目 | 要求或推荐配置 |
+| --- | --- |
+| 系统 | Linux x86_64，推荐 Ubuntu 22.04 |
+| CUDA | 推荐 CUDA Toolkit 12.8；容器安装建议选择含编译工具的 `devel` 基础环境 |
+| Python | Python 3.11；模拟器与 OpenPI 使用独立环境 |
+| 模拟器 | Isaac Sim 5.1.0，配合安装教程指定的 RoboDojo、IsaacLab 和 cuRobo 版本 |
+| 模拟器 GPU | 支持 RTX 渲染的 NVIDIA GPU，例如 RTX 4090 |
+| 策略／训练 GPU | 与所用 CUDA/JAX 版本兼容且显存足够的 NVIDIA GPU，可与模拟器分机部署 |
+
+上述操作系统和 CUDA 组合是推荐安装起点，不限定唯一镜像。A100/H100 等无 RT Cores 的计算卡可用于模型计算，不能替代模拟器所需的 RTX 渲染 GPU。宿主机驱动须兼容 CUDA 与 Isaac Sim；容器还需启用 GPU 和图形支持。具体要求见[安装教程](docs/INSTALLATION.md#基础环境与容器)。
+
 ## 复现最终 ESI 评测
 
 默认评测使用最终 ESI checkpoint、GPT 前馈子任务和项目提供的任务指导，采用 benchmark 原生预算与评分。默认评测集为 10 个任务，每任务 20 个 case。
