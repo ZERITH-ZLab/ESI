@@ -19,7 +19,16 @@ ESI 将 LLM 规划与 VLA 策略结合，通过采集、子任务标注与训练
 
 默认评测使用最终 ESI checkpoint、GPT 前馈子任务和项目提供的任务指导，采用 benchmark 原生预算与评分。默认评测集为 10 个任务，每任务 20 个 case。
 
-**最终权重下载地址待发布。** 权重不包含在代码仓库中；目录结构与发布状态见 [CHECKPOINTS.md](docs/CHECKPOINTS.md)。
+最终权重已发布至 [Hugging Face：ESI-pi05](https://huggingface.co/Embodied-Self-Improvement/ESI-pi05)，参数与归一化文件共约 11.6 GiB。安装 Hugging Face CLI 后，下载到默认目录：
+
+```bash
+hf download Embodied-Self-Improvement/ESI-pi05 \
+  --revision 09395c2dd983b3f4d9dbd877297a2eecfd31ef6e \
+  --include "params/**" "assets/**" \
+  --local-dir /mnt/models/esi-final
+```
+
+命令固定权重版本；CLI 安装、目录结构与文件校验见 [CHECKPOINTS.md](docs/CHECKPOINTS.md)。下载目录需有写权限和足够空间。
 
 1. 按[安装教程](docs/INSTALLATION.md)安装 RoboDojo、XPolicyLab/OpenPI、Isaac Sim/IsaacLab、cuRobo 和资产。教程包含推荐路径文件树与必要补丁。
 2. 将最终权重放到 `/mnt/models/esi-final`，或在部署配置中填写实际路径。

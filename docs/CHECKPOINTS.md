@@ -2,10 +2,35 @@
 
 | Model | Download | Local reference path | Use |
 | --- | --- | --- | --- |
-| ESI final π05 | **Pending publication — URL and checksum to be added** | `/mnt/models/esi-final` | Default final ESI evaluation |
+| ESI final π05 | [ESI-pi05](https://huggingface.co/Embodied-Self-Improvement/ESI-pi05) | `/mnt/models/esi-final` | Default final ESI evaluation |
 | RoboDojo pretrained π05 | [RoboDojo dataset repository](https://huggingface.co/datasets/RoboDojo-Benchmark/RoboDojo) | `/mnt/models/robodojo_pi05/59999` | Bootstrap collection and baseline evaluation |
 
-The final checkpoint download is not yet available. An authorized local copy is required until publication. The launcher does not substitute the pretrained model when the final checkpoint is missing.
+## Download ESI final
+
+The public model repository can be downloaded without authentication. Install the [Hugging Face CLI](https://huggingface.co/docs/huggingface_hub/guides/cli) in a separate tools environment if it is not already available. The following command downloads the release revision (21 parameter and normalization files, approximately 11.6 GiB):
+
+```bash
+hf download Embodied-Self-Improvement/ESI-pi05 \
+  --revision 09395c2dd983b3f4d9dbd877297a2eecfd31ef6e \
+  --include "params/**" "assets/**" \
+  --local-dir /mnt/models/esi-final
+```
+
+Use a writable directory with sufficient free space. If a download is interrupted, rerun the same command; retain the local download metadata so that up-to-date files can be reused. The pinned revision prevents later repository updates from changing the selected weights.
+
+From the ESI source repository root, verify the downloaded files:
+
+```bash
+ESI_SOURCE_ROOT="$PWD"
+(
+  cd /mnt/models/esi-final
+  sha256sum --check "$ESI_SOURCE_ROOT/configs/checkpoints/esi-final.sha256"
+)
+```
+
+All 21 entries should report `OK`. The checksum list applies to the pinned revision above.
+
+## Configure the checkpoint path
 
 The configured path must point to the checkpoint root, not its parent, a training experiment directory, or `params/` alone:
 
