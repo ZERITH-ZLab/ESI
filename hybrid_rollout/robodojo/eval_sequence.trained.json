@@ -1,0 +1,18 @@
+{
+  "schema": "robodojo.eval_sequence.v1",
+  "name": "arrange_regression15_trained_sequence_v1",
+  "workers": 4,
+  "account_pool_file": "/root/.config/gpt-as-policy/account_pool.json",
+  "models": [
+    {
+      "experiment": "arrange_regression15_train6000_v1",
+      "checkpoint": "/mnt/models/esi-final",
+      "policy_input": "task_only"
+    },
+    {
+      "experiment": "arrange_regression15_subtask6000_no_instruction_v1",
+      "checkpoint": "/mnt/models/esi-final",
+      "policy_input": "task_only"
+    }
+  ]
+}

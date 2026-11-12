@@ -1,0 +1,49 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+node_modules/
+.npm-cache/
+.data-app-offline/
+hybrid_rollout/report_site/app/dist/
+runtime/
+private/
+private_runtime/
+auth.json
+*.key
+*.pem
+*.sqlite*
+*.db
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+
+# Local collection/training outputs (normally stored on the mounted volume).
+/results/
+/datasets/
+/checkpoints/
+/review_videos*/
+/diagnostics/
+/.cache/
+/wandb/
+
+# Local deployment packages, backups and debug outputs.
+/outputs/
+
+# Per-machine settings are not release defaults.
+**/config.local.json
+
+/configs/*.local.json
+/configs/**/*.local.json
+
+# Internal migration/audit records belong outside the release repository.
+/docs/IMPORT_STAGE*.md
+/docs/import_manifest.json
+/docs/import_validation.json
+/docs/snapshot_validation.json
+/docs/final_eval_policy_hashes.json
+/docs/HISTORY_CLEANUP.md
+/docs/history_cleanup*.json
+/release-planning/

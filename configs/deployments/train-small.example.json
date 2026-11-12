@@ -1,0 +1,11 @@
+{
+  "extends": "../deployment.example.json",
+  "training": {
+    "num_nodes": 1,
+    "num_devices": 1,
+    "fsdp_devices": 1,
+    "per_device_batch_size": 1,
+    "gradient_accumulation_steps": 2,
+    "num_workers": 0
+  }
+}

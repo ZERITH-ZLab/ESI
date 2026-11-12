@@ -1,0 +1,9 @@
+{
+  "strategy": "task_case_control_weighted",
+  "gpt_start_weight": 4.0,
+  "pi05_start_weight": 1.0,
+  "random_ratio": 0.5,
+  "successful_case_weight": 2.0,
+  "unsuccessful_case_weight": 1.0,
+  "seed": 0
+}

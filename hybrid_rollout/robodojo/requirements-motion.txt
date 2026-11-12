@@ -1,0 +1,5 @@
+# Quintic planning uses NumPy/SciPy already required by robot IK.
+# No QP optimizer or additional time-parameterization package is required.
+# CPU review of pinned PhysX cooked convex geometry. Install with --no-deps
+# into the simulator interpreter to preserve existing NumPy/SciPy packages.
+python-fcl==0.7.0.10

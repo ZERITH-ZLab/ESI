@@ -1,0 +1,39 @@
+{
+  "extends": [
+    "../common.json",
+    "../environments/robodojo.json"
+  ],
+  "stage": "collection",
+  "tasks": {
+    "$file": "../tasks.json"
+  },
+  "run": {
+    "name": null,
+    "round": 1,
+    "checkpoint": "${deployment.paths.official_checkpoint}"
+  },
+  "limits": {
+    "episode_seconds": 10800
+  },
+  "config": {
+    "schema": "robodojo.collection_suite.v1",
+    "budget_multiplier": [
+      10,
+      7
+    ],
+    "pi_force_hold": {
+      "enabled": "${robodojo.pi_force_hold.enabled}",
+      "config": "${robodojo.pi_force_hold.config}"
+    },
+    "case_selection": "full20",
+    "controller_route": "auto_infer_v1",
+    "prompt_evolution": {
+      "$file": "../prompt_evolution.json"
+    },
+    "prompt_bundle": null,
+    "prompt_bundle_sha256": null
+  },
+  "environment": {
+    "ROBODOJO_GRIPPER_HOLD_CONFIG": "${robodojo.gpt_gripper_hold}"
+  }
+}

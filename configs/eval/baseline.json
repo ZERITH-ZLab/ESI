@@ -1,0 +1,40 @@
+{
+  "extends": [
+    "../common.json",
+    "../environments/robodojo.json"
+  ],
+  "stage": "eval",
+  "tasks": {
+    "$file": "../tasks.json"
+  },
+  "cases": {
+    "$file": "cases.json"
+  },
+  "run": {
+    "name": null,
+    "checkpoint": "${deployment.paths.official_checkpoint}"
+  },
+  "limits": {
+    "episode_seconds": 10800,
+    "queue_restarts": 3
+  },
+  "model": {
+    "policy_input": "task_only",
+    "prompt_profile": "baseline_task_only_v1",
+    "downsampling": {
+      "mode": "off"
+    }
+  },
+  "config": {
+    "schema": "robodojo.eval_sequence.v1",
+    "scheduling": "cross_task_queue_v1"
+  },
+  "robodojo": {
+    "pi_force_hold": {
+      "enabled": false
+    }
+  },
+  "environment": {
+    "ROBODOJO_GRIPPER_HOLD_CONFIG": "${robodojo.gpt_gripper_hold}"
+  }
+}

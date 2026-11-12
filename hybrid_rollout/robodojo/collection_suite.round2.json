@@ -1,0 +1,37 @@
+{
+  "schema": "robodojo.collection_suite.v1",
+  "name": "multitask10_round2_case20_200_subtask_zero_v1",
+  "workers": 8,
+  "account_pool_file": "/root/.config/gpt-as-policy/account_pool.json",
+  "checkpoint": "/mnt/esi/training/round1/checkpoints/6000",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "budget_multiplier": [
+    10,
+    7
+  ],
+  "pi_force_hold": {
+    "enabled": true,
+    "config": {
+      "tighten_enabled": true,
+      "flywheel_round": 2,
+      "controller_route": "subtask_feedforward_v1",
+      "checkpoint_sha256": "1a8088fd6186af6f6366d3304865d6cb4f20f77d323ac2f6be76cdb5dad0db80",
+      "tighten_mode": "zero"
+    }
+  },
+  "tasks": [
+    "pack_objects_into_box",
+    "arrange_largest_number",
+    "sort_nesting_dolls_by_size",
+    "classify_objects",
+    "fill_pen_holder",
+    "organize_table",
+    "imitate_sorting_sequence",
+    "stack_blocks_by_language",
+    "classify_objects_by_language",
+    "sweep_blocks"
+  ],
+  "case_selection": "full20",
+  "controller_route": "subtask_feedforward_v1"
+}

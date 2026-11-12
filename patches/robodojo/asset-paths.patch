@@ -1,0 +1,54 @@
+diff --git a/env/global_configs.py b/env/global_configs.py
+index 04dbff6..5c8ff7a 100644
+--- a/env/global_configs.py
++++ b/env/global_configs.py
+@@ -6,9 +6,9 @@ current_dir = os.path.dirname(current_file)
+ ROOT_DIR = os.path.join(current_dir, "..")
+ 
+ BENCHMARK = "RoboDojo"
+-ASSETS_PATH = os.path.join(ROOT_DIR, "Assets")
+-OBJECTS_PATH = os.path.join(ROOT_DIR, f"Assets/Object/{BENCHMARK}")
+-ROBOTS_PATH = os.path.join(ROOT_DIR, "Assets/Robots")
++ASSETS_PATH = os.path.realpath(os.path.join(ROOT_DIR, "Assets"))
++OBJECTS_PATH = os.path.join(ASSETS_PATH, "Object", BENCHMARK)
++ROBOTS_PATH = os.path.join(ASSETS_PATH, "Robots")
+ ENV_CONFIG_PATH = os.path.join(ROOT_DIR, "env_cfg")
+ 
+ ENV_REGEX_NAMESPACE = "{ENV_REGEX_NS}"
+diff --git a/utils/update_embodiment_config_path.py b/utils/update_embodiment_config_path.py
+index 4da11f8..162e40e 100644
+--- a/utils/update_embodiment_config_path.py
++++ b/utils/update_embodiment_config_path.py
+@@ -43,6 +43,10 @@ def main():
+             os.chdir(assets_path)
+             print_color(f"Switched to: {assets_path}", BLUE)
+ 
++    # Resolve the asset symlink so generated configs use the selected asset copy.
++    resolved_assets_dir = os.path.realpath(os.path.join(assets_path, "Assets"))
++    print_color(f"Resolved Assets directory: {resolved_assets_dir}", BLUE)
++
+     # Export environment variable
+     os.environ["ASSETS_PATH"] = assets_path
+     print_color(f"Setting environment variable: ASSETS_PATH={assets_path}", BLUE)
+@@ -69,16 +73,18 @@ def main():
+             with open(tmp_file) as f:
+                 content = f.read()
+ 
+-            new_content = content.replace("${ASSETS_PATH}", assets_path)
++            new_content = content.replace("${ASSETS_PATH}/Assets", resolved_assets_dir)
++            new_content = new_content.replace("$ASSETS_PATH/Assets", resolved_assets_dir)
++            new_content = new_content.replace("${ASSETS_PATH}", assets_path)
+             new_content = new_content.replace("$ASSETS_PATH", assets_path)
+ 
+             with open(target_file, "w") as f:
+                 f.write(new_content)
+ 
+-            print_color(f"  ✓ Successfully replaced ${{ASSETS_PATH}} -> {assets_path}", GREEN)
++            print_color(f"  ✓ Generated configuration using Assets -> {resolved_assets_dir}", GREEN)
+             count_updated += 1
+ 
+-            if "${ASSETS_PATH}" in content and assets_path in new_content:
++            if "${ASSETS_PATH}" in content and "${ASSETS_PATH}" not in new_content:
+                 print_color("  ✓ Confirmed path was correctly replaced", GREEN)
+             elif "${ASSETS_PATH}" in content:
+                 print_color("  ! Warning: Could not confirm if path was correctly replaced", YELLOW)

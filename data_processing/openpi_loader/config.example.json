@@ -1,0 +1,10 @@
+{
+  "index_root": "/mnt/esi/indexes/training",
+  "base_checkpoint": "/mnt/models/robodojo_pi05/59999",
+  "sampling_config": "data_processing/sampling/config.example.json",
+  "norm_stats_dir": "/mnt/esi/norm/training",
+  "batch_size": 8,
+  "num_batches": 10,
+  "num_workers": 2,
+  "cache_episodes": 4
+}

@@ -1,0 +1,3 @@
+# LeRobot version used by the matching OpenPI checkout. Do not upgrade rollout env.
+lerobot==0.4.4
+mcap==1.3.1

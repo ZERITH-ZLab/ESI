@@ -1,0 +1,2544 @@
+{
+  "schema": "ee_motion_distribution_v1",
+  "source": {
+    "dataset": "RoboDojo_ee_lerobot_v30_video",
+    "statistics_run": "offline_motion_statistics",
+    "statistics_sha256": "e9bbc2c72a4324b96fd1a4375a8573cf785d4b5dcc8cafc063f5c306e89f9c4b",
+    "seed": 20261008,
+    "episodes_per_task": 20,
+    "fps": 25,
+    "field": "action",
+    "subset": "moving",
+    "moving_linear_m_s": 0.001,
+    "moving_angular_rad_s": 0.008726646259971648,
+    "quantiles": [
+      0.5,
+      0.9
+    ],
+    "angular_units": "rad",
+    "linear_units": "m",
+    "interpretation": "Sampled absolute EE target sequence; not a physical controller rating."
+  },
+  "tasks": {
+    "arrange_largest_number": {
+      "task_index": 0,
+      "instruction": "Arrange the numbers from left to right to form the largest possible number, and place them on the pad.",
+      "episode_ids": [
+        11,
+        76,
+        21,
+        34,
+        5,
+        77,
+        68,
+        95,
+        17,
+        65,
+        81,
+        78,
+        31,
+        97,
+        85,
+        91,
+        75,
+        10,
+        80,
+        92
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 4961,
+            "p50": 0.21772613455969717,
+            "p90": 0.6820278273721488
+          },
+          "angular_velocity_norm": {
+            "count": 4961,
+            "p50": 0.1378734319152332,
+            "p90": 2.629470106349064
+          },
+          "linear_acceleration_norm": {
+            "count": 5168,
+            "p50": 1.9332462655442244,
+            "p90": 3.3097625447007117
+          },
+          "angular_acceleration_norm": {
+            "count": 5168,
+            "p50": 2.282430225522912,
+            "p90": 9.7406000356989
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 5553,
+            "p50": 0.22705283969632117,
+            "p90": 0.6921772150901584
+          },
+          "angular_velocity_norm": {
+            "count": 5553,
+            "p50": 0.14678385756440365,
+            "p90": 2.657483693946575
+          },
+          "linear_acceleration_norm": {
+            "count": 5793,
+            "p50": 1.9525633633001547,
+            "p90": 3.2770766774410136
+          },
+          "angular_acceleration_norm": {
+            "count": 5793,
+            "p50": 2.2647523654542443,
+            "p90": 9.829815004752389
+          }
+        }
+      }
+    },
+    "build_tower": {
+      "task_index": 1,
+      "instruction": "Build a tower using the wooden blocks and wooden boards.",
+      "episode_ids": [
+        147,
+        100,
+        111,
+        103,
+        177,
+        122,
+        123,
+        160,
+        192,
+        168,
+        125,
+        139,
+        118,
+        130,
+        172,
+        187,
+        117,
+        161,
+        164,
+        165
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 9229,
+            "p50": 0.1981131743156663,
+            "p90": 0.5613112046623815
+          },
+          "angular_velocity_norm": {
+            "count": 9229,
+            "p50": 0.15518201708992857,
+            "p90": 2.818261359479387
+          },
+          "linear_acceleration_norm": {
+            "count": 9542,
+            "p50": 1.5711528857331603,
+            "p90": 3.168613480833738
+          },
+          "angular_acceleration_norm": {
+            "count": 9542,
+            "p50": 3.141300481181971,
+            "p90": 12.162899489884516
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 8641,
+            "p50": 0.19573117987549896,
+            "p90": 0.5447246617948915
+          },
+          "angular_velocity_norm": {
+            "count": 8641,
+            "p50": 0.15862194171617489,
+            "p90": 2.8981746798606083
+          },
+          "linear_acceleration_norm": {
+            "count": 8886,
+            "p50": 1.4604278776819206,
+            "p90": 3.0501641569525892
+          },
+          "angular_acceleration_norm": {
+            "count": 8886,
+            "p50": 3.1608863442203488,
+            "p90": 11.518854148923376
+          }
+        }
+      }
+    },
+    "classify_objects": {
+      "task_index": 2,
+      "instruction": "Sort the objects by category into the three baskets.",
+      "episode_ids": [
+        280,
+        290,
+        202,
+        219,
+        298,
+        216,
+        238,
+        207,
+        293,
+        270,
+        272,
+        279,
+        247,
+        214,
+        260,
+        258,
+        253,
+        236,
+        286,
+        230
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 8226,
+            "p50": 0.19935972673254612,
+            "p90": 0.44668648840712216
+          },
+          "angular_velocity_norm": {
+            "count": 8226,
+            "p50": 0.4631172497829145,
+            "p90": 1.4805958971829734
+          },
+          "linear_acceleration_norm": {
+            "count": 8234,
+            "p50": 0.858888556025899,
+            "p90": 2.2544281499059737
+          },
+          "angular_acceleration_norm": {
+            "count": 8234,
+            "p50": 2.5998455560806217,
+            "p90": 7.310735185695077
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 6550,
+            "p50": 0.18791581263095847,
+            "p90": 0.42722985814235487
+          },
+          "angular_velocity_norm": {
+            "count": 6550,
+            "p50": 0.5213830400108477,
+            "p90": 1.7335988691753883
+          },
+          "linear_acceleration_norm": {
+            "count": 6578,
+            "p50": 0.919808729559075,
+            "p90": 2.4378177947824544
+          },
+          "angular_acceleration_norm": {
+            "count": 6578,
+            "p50": 3.0839795421703515,
+            "p90": 8.448155697149144
+          }
+        }
+      }
+    },
+    "cover_blocks": {
+      "task_index": 3,
+      "instruction": "Cover the blocks from left to right, remember their colors, then uncover them in the order: red, green, and blue.",
+      "episode_ids": [
+        363,
+        398,
+        341,
+        329,
+        361,
+        331,
+        354,
+        309,
+        353,
+        372,
+        391,
+        389,
+        337,
+        382,
+        390,
+        324,
+        301,
+        379,
+        315,
+        373
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 6610,
+            "p50": 0.27313585377223315,
+            "p90": 0.6014376576205689
+          },
+          "angular_velocity_norm": {
+            "count": 6610,
+            "p50": 0.07259193186106032,
+            "p90": 2.645544996218539
+          },
+          "linear_acceleration_norm": {
+            "count": 6845,
+            "p50": 2.0730062364321555,
+            "p90": 3.5043021955439855
+          },
+          "angular_acceleration_norm": {
+            "count": 6845,
+            "p50": 1.6932050455828662,
+            "p90": 9.348087049337412
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 3750,
+            "p50": 0.26741081461997834,
+            "p90": 0.5146587294338506
+          },
+          "angular_velocity_norm": {
+            "count": 3750,
+            "p50": 0.1037485948684521,
+            "p90": 2.9644644355386953
+          },
+          "linear_acceleration_norm": {
+            "count": 3922,
+            "p50": 1.8117530674450166,
+            "p90": 3.395644127356706
+          },
+          "angular_acceleration_norm": {
+            "count": 3922,
+            "p50": 2.185801104785163,
+            "p90": 11.563112582675798
+          }
+        }
+      }
+    },
+    "deposit_coin": {
+      "task_index": 4,
+      "instruction": "Pick up the coin from the holder and insert it precisely into the coin bank.",
+      "episode_ids": [
+        490,
+        422,
+        402,
+        467,
+        447,
+        409,
+        426,
+        415,
+        497,
+        459,
+        466,
+        451,
+        489,
+        438,
+        442,
+        407,
+        463,
+        420,
+        434,
+        481
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 1721,
+            "p50": 0.19592862057242588,
+            "p90": 0.4859716710701562
+          },
+          "angular_velocity_norm": {
+            "count": 1721,
+            "p50": 1.5632438575622485,
+            "p90": 3.648036631489943
+          },
+          "linear_acceleration_norm": {
+            "count": 1798,
+            "p50": 1.432111411618775,
+            "p90": 2.356063966013318
+          },
+          "angular_acceleration_norm": {
+            "count": 1798,
+            "p50": 8.98767811905618,
+            "p90": 14.898749781756017
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 1670,
+            "p50": 0.18183545325445769,
+            "p90": 0.49779962332182875
+          },
+          "angular_velocity_norm": {
+            "count": 1670,
+            "p50": 1.515503750122764,
+            "p90": 3.525138637514084
+          },
+          "linear_acceleration_norm": {
+            "count": 1748,
+            "p50": 1.4306173795541461,
+            "p90": 2.5375160291205168
+          },
+          "angular_acceleration_norm": {
+            "count": 1748,
+            "p50": 7.786796261866934,
+            "p90": 13.899267699555113
+          }
+        }
+      }
+    },
+    "spell_RoboDojo": {
+      "task_index": 5,
+      "instruction": "Arrange the letters to spell \"RoboDojo\" in a row.",
+      "episode_ids": [
+        537,
+        550,
+        571,
+        544,
+        521,
+        508,
+        565,
+        542,
+        563,
+        595,
+        510,
+        597,
+        579,
+        583,
+        584,
+        593,
+        553,
+        591,
+        589,
+        520
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 5790,
+            "p50": 0.1811982644486578,
+            "p90": 0.5730180421456335
+          },
+          "angular_velocity_norm": {
+            "count": 5790,
+            "p50": 0.06891140836007942,
+            "p90": 1.7837434153200797
+          },
+          "linear_acceleration_norm": {
+            "count": 5970,
+            "p50": 1.6401678841408822,
+            "p90": 3.2934991917149845
+          },
+          "angular_acceleration_norm": {
+            "count": 5970,
+            "p50": 1.4151567715188005,
+            "p90": 7.382284747180819
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 6034,
+            "p50": 0.18010542869890245,
+            "p90": 0.5678415143630473
+          },
+          "angular_velocity_norm": {
+            "count": 6034,
+            "p50": 0.06999234148759044,
+            "p90": 1.6343936324140833
+          },
+          "linear_acceleration_norm": {
+            "count": 6247,
+            "p50": 1.6764807693951131,
+            "p90": 3.3738000791041385
+          },
+          "angular_acceleration_norm": {
+            "count": 6247,
+            "p50": 1.4856017364387397,
+            "p90": 7.41125557193208
+          }
+        }
+      }
+    },
+    "fasten_screws": {
+      "task_index": 6,
+      "instruction": "Insert and tighten each screw into the nut of the same color.",
+      "episode_ids": [
+        666,
+        659,
+        664,
+        682,
+        602,
+        665,
+        651,
+        626,
+        654,
+        636,
+        686,
+        649,
+        616,
+        689,
+        625,
+        642,
+        699,
+        667,
+        690,
+        606
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 11808,
+            "p50": 0.03169651335254377,
+            "p90": 0.40007556348161727
+          },
+          "angular_velocity_norm": {
+            "count": 11808,
+            "p50": 1.4553203787851956,
+            "p90": 4.219838220783523
+          },
+          "linear_acceleration_norm": {
+            "count": 12339,
+            "p50": 0.24999617270436914,
+            "p90": 2.6963967337759116
+          },
+          "angular_acceleration_norm": {
+            "count": 12339,
+            "p50": 7.35714948899803,
+            "p90": 14.777164732705755
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 11994,
+            "p50": 0.031396660619850025,
+            "p90": 0.42505216473943114
+          },
+          "angular_velocity_norm": {
+            "count": 11994,
+            "p50": 1.397525609087048,
+            "p90": 4.192504480290436
+          },
+          "linear_acceleration_norm": {
+            "count": 12478,
+            "p50": 0.254885235834456,
+            "p90": 2.72203412000539
+          },
+          "angular_acceleration_norm": {
+            "count": 12478,
+            "p50": 7.035240474096446,
+            "p90": 14.789539528069064
+          }
+        }
+      }
+    },
+    "fill_egg_holder": {
+      "task_index": 7,
+      "instruction": "Place the four eggs from the basket into the egg holder, then close the lid.",
+      "episode_ids": [
+        763,
+        769,
+        710,
+        708,
+        709,
+        787,
+        779,
+        781,
+        739,
+        775,
+        788,
+        714,
+        715,
+        746,
+        743,
+        704,
+        770,
+        735,
+        740,
+        792
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 2777,
+            "p50": 0.2446026416474161,
+            "p90": 0.5048551186752812
+          },
+          "angular_velocity_norm": {
+            "count": 2777,
+            "p50": 0.5394444836756801,
+            "p90": 1.4122078791165147
+          },
+          "linear_acceleration_norm": {
+            "count": 2777,
+            "p50": 0.9999616629154844,
+            "p90": 2.8018112970659192
+          },
+          "angular_acceleration_norm": {
+            "count": 2777,
+            "p50": 2.6251761141452654,
+            "p90": 8.208151849699256
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 4978,
+            "p50": 0.22550992770990624,
+            "p90": 0.4959988085836479
+          },
+          "angular_velocity_norm": {
+            "count": 4978,
+            "p50": 0.6352854765842892,
+            "p90": 1.5744039329410144
+          },
+          "linear_acceleration_norm": {
+            "count": 4978,
+            "p50": 1.1761520658966442,
+            "p90": 3.1087411907645364
+          },
+          "angular_acceleration_norm": {
+            "count": 4978,
+            "p50": 3.6304302655423166,
+            "p90": 10.690805361033375
+          }
+        }
+      }
+    },
+    "fill_pen_holder": {
+      "task_index": 8,
+      "instruction": "Hold the pen holder with one hand, place all pens into it with the other hand, then put it back down.",
+      "episode_ids": [
+        807,
+        846,
+        855,
+        854,
+        880,
+        848,
+        801,
+        802,
+        844,
+        845,
+        871,
+        866,
+        897,
+        884,
+        886,
+        833,
+        834,
+        885,
+        856,
+        850
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 8913,
+            "p50": 0.11558578093619792,
+            "p90": 0.3846619417137961
+          },
+          "angular_velocity_norm": {
+            "count": 8913,
+            "p50": 0.35993542561970765,
+            "p90": 1.7642044559270769
+          },
+          "linear_acceleration_norm": {
+            "count": 9148,
+            "p50": 0.5826872930668563,
+            "p90": 2.43022368648977
+          },
+          "angular_acceleration_norm": {
+            "count": 9148,
+            "p50": 2.0573613217762245,
+            "p90": 10.037698251703773
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 9772,
+            "p50": 0.12207524458729654,
+            "p90": 0.3613070420325683
+          },
+          "angular_velocity_norm": {
+            "count": 9772,
+            "p50": 0.36531170895286835,
+            "p90": 1.85693113188961
+          },
+          "linear_acceleration_norm": {
+            "count": 9928,
+            "p50": 0.5809210023558469,
+            "p90": 2.2735501390738455
+          },
+          "angular_acceleration_norm": {
+            "count": 9928,
+            "p50": 2.0570555226324427,
+            "p90": 9.676668870033431
+          }
+        }
+      }
+    },
+    "fold_clothes": {
+      "task_index": 9,
+      "instruction": "Fold the clothes neatly.",
+      "episode_ids": [
+        992,
+        978,
+        924,
+        905,
+        977,
+        972,
+        989,
+        929,
+        995,
+        931,
+        930,
+        944,
+        982,
+        939,
+        920,
+        996,
+        902,
+        934,
+        964,
+        993
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 3369,
+            "p50": 0.27698996356681643,
+            "p90": 0.6762116476555787
+          },
+          "angular_velocity_norm": {
+            "count": 3369,
+            "p50": 1.0516007056583885,
+            "p90": 3.0729351004167063
+          },
+          "linear_acceleration_norm": {
+            "count": 3499,
+            "p50": 1.7496127291212753,
+            "p90": 3.45668152677941
+          },
+          "angular_acceleration_norm": {
+            "count": 3499,
+            "p50": 5.0858031929437475,
+            "p90": 12.286339848275528
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 2668,
+            "p50": 0.25175813033906697,
+            "p90": 0.5551333662428778
+          },
+          "angular_velocity_norm": {
+            "count": 2668,
+            "p50": 0.7385213788077691,
+            "p90": 2.4499637407246415
+          },
+          "linear_acceleration_norm": {
+            "count": 2813,
+            "p50": 1.7047432752833147,
+            "p90": 3.293711517655368
+          },
+          "angular_acceleration_norm": {
+            "count": 2813,
+            "p50": 4.593071849961619,
+            "p90": 12.081589056400176
+          }
+        }
+      }
+    },
+    "hang_mugs": {
+      "task_index": 10,
+      "instruction": "Hang all the mugs on the mug rack.",
+      "episode_ids": [
+        1086,
+        1028,
+        1029,
+        1089,
+        1015,
+        1025,
+        1056,
+        1060,
+        1079,
+        1039,
+        1003,
+        1061,
+        1073,
+        1050,
+        1054,
+        1038,
+        1095,
+        1034,
+        1068,
+        1051
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 5479,
+            "p50": 0.1283000564174632,
+            "p90": 0.333109029348565
+          },
+          "angular_velocity_norm": {
+            "count": 5479,
+            "p50": 0.4277722321659283,
+            "p90": 1.308589280070063
+          },
+          "linear_acceleration_norm": {
+            "count": 5501,
+            "p50": 0.541618291786743,
+            "p90": 1.861124225673221
+          },
+          "angular_acceleration_norm": {
+            "count": 5501,
+            "p50": 1.860448153079484,
+            "p90": 5.666692667130869
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 5164,
+            "p50": 0.11149953771139427,
+            "p90": 0.31724899765577996
+          },
+          "angular_velocity_norm": {
+            "count": 5164,
+            "p50": 0.3930054960904932,
+            "p90": 1.2626251597345268
+          },
+          "linear_acceleration_norm": {
+            "count": 5166,
+            "p50": 0.47963441271001594,
+            "p90": 1.4356654023787687
+          },
+          "angular_acceleration_norm": {
+            "count": 5166,
+            "p50": 1.6636932016349293,
+            "p90": 4.957247389329846
+          }
+        }
+      }
+    },
+    "imitate_sorting_sequence": {
+      "task_index": 11,
+      "instruction": "Observe the object placement order, remember it, then place the corresponding objects into the basket in the same order.",
+      "episode_ids": [
+        1108,
+        1104,
+        1169,
+        1141,
+        1151,
+        1164,
+        1118,
+        1187,
+        1191,
+        1133,
+        1146,
+        1125,
+        1128,
+        1196,
+        1115,
+        1163,
+        1156,
+        1147,
+        1119,
+        1152
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 9803,
+            "p50": 0.2626517207729812,
+            "p90": 0.7085039256828035
+          },
+          "angular_velocity_norm": {
+            "count": 9803,
+            "p50": 0.19920532225232884,
+            "p90": 2.7591565687764157
+          },
+          "linear_acceleration_norm": {
+            "count": 10054,
+            "p50": 2.0383195030439962,
+            "p90": 3.42904194514254
+          },
+          "angular_acceleration_norm": {
+            "count": 10054,
+            "p50": 2.5112869790140375,
+            "p90": 10.471939603437473
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 6073,
+            "p50": 0.2684813691433782,
+            "p90": 0.7089425025280641
+          },
+          "angular_velocity_norm": {
+            "count": 6073,
+            "p50": 0.3319083168114215,
+            "p90": 2.7782458201245674
+          },
+          "linear_acceleration_norm": {
+            "count": 6265,
+            "p50": 2.084804689418088,
+            "p90": 3.4974101376154483
+          },
+          "angular_acceleration_norm": {
+            "count": 6265,
+            "p50": 3.6067672780943507,
+            "p90": 10.520395013187683
+          }
+        }
+      }
+    },
+    "insert_key": {
+      "task_index": 12,
+      "instruction": "Pick up the key, hand it over to the other hand, insert it into the keyhole, then turn it.",
+      "episode_ids": [
+        1251,
+        1291,
+        1298,
+        1222,
+        1238,
+        1265,
+        1292,
+        1269,
+        1272,
+        1212,
+        1279,
+        1240,
+        1287,
+        1280,
+        1235,
+        1244,
+        1284,
+        1296,
+        1224,
+        1213
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 1834,
+            "p50": 0.1606602312244133,
+            "p90": 0.48409184790927284
+          },
+          "angular_velocity_norm": {
+            "count": 1834,
+            "p50": 1.1714719276294552,
+            "p90": 3.552608478600328
+          },
+          "linear_acceleration_norm": {
+            "count": 1902,
+            "p50": 1.0234810795342266,
+            "p90": 2.6531092127862936
+          },
+          "angular_acceleration_norm": {
+            "count": 1902,
+            "p50": 6.38114980355969,
+            "p90": 14.444955756841328
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 1826,
+            "p50": 0.22846187544281232,
+            "p90": 0.5438866853018189
+          },
+          "angular_velocity_norm": {
+            "count": 1826,
+            "p50": 1.3282700959520233,
+            "p90": 3.584035781779975
+          },
+          "linear_acceleration_norm": {
+            "count": 1882,
+            "p50": 1.5368144568016802,
+            "p90": 2.579524908703719
+          },
+          "angular_acceleration_norm": {
+            "count": 1882,
+            "p50": 6.374206216017581,
+            "p90": 13.523790893742806
+          }
+        }
+      }
+    },
+    "insert_tubes": {
+      "task_index": 13,
+      "instruction": "Insert the three tubes into the rack one by one.",
+      "episode_ids": [
+        1345,
+        1348,
+        1312,
+        1356,
+        1379,
+        1306,
+        1357,
+        1364,
+        1304,
+        1323,
+        1384,
+        1317,
+        1316,
+        1370,
+        1326,
+        1331,
+        1380,
+        1390,
+        1388,
+        1334
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 3022,
+            "p50": 0.2796321924177668,
+            "p90": 0.525415953969554
+          },
+          "angular_velocity_norm": {
+            "count": 3022,
+            "p50": 0.39068901241379783,
+            "p90": 2.714485438013005
+          },
+          "linear_acceleration_norm": {
+            "count": 3108,
+            "p50": 1.693119674905518,
+            "p90": 3.455412450535489
+          },
+          "angular_acceleration_norm": {
+            "count": 3108,
+            "p50": 3.189207355832266,
+            "p90": 9.932277135554651
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 3252,
+            "p50": 0.2820982206409016,
+            "p90": 0.49849046799320007
+          },
+          "angular_velocity_norm": {
+            "count": 3252,
+            "p50": 0.37882091067969126,
+            "p90": 2.772205019908857
+          },
+          "linear_acceleration_norm": {
+            "count": 3340,
+            "p50": 1.588471528632833,
+            "p90": 3.465963190858276
+          },
+          "angular_acceleration_norm": {
+            "count": 3340,
+            "p50": 3.889382643652802,
+            "p90": 9.947249499864075
+          }
+        }
+      }
+    },
+    "make_kong": {
+      "task_index": 14,
+      "instruction": "Wait for the opponent to discard a tile, then declare a kong with the matching tiles.",
+      "episode_ids": [
+        1446,
+        1470,
+        1483,
+        1421,
+        1453,
+        1468,
+        1451,
+        1439,
+        1464,
+        1452,
+        1427,
+        1409,
+        1441,
+        1499,
+        1401,
+        1425,
+        1408,
+        1445,
+        1472,
+        1458
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 3756,
+            "p50": 0.1763543963559919,
+            "p90": 0.44129003277147943
+          },
+          "angular_velocity_norm": {
+            "count": 3756,
+            "p50": 0.07524254352789893,
+            "p90": 2.43486021494749
+          },
+          "linear_acceleration_norm": {
+            "count": 3984,
+            "p50": 1.4250702369669344,
+            "p90": 2.6456022714015783
+          },
+          "angular_acceleration_norm": {
+            "count": 3984,
+            "p50": 1.5891215484377874,
+            "p90": 10.006878828767059
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 2013,
+            "p50": 0.19739035309397307,
+            "p90": 0.5773068127885267
+          },
+          "angular_velocity_norm": {
+            "count": 2013,
+            "p50": 0.19759329524743402,
+            "p90": 3.906899999436625
+          },
+          "linear_acceleration_norm": {
+            "count": 2108,
+            "p50": 1.2563489732562005,
+            "p90": 3.0493297335153153
+          },
+          "angular_acceleration_norm": {
+            "count": 2108,
+            "p50": 3.877925547455461,
+            "p90": 14.75332248445599
+          }
+        }
+      }
+    },
+    "make_toast": {
+      "task_index": 15,
+      "instruction": "Pick up two slices of bread, place them into the toaster, and press the lever down.",
+      "episode_ids": [
+        1522,
+        1510,
+        1539,
+        1517,
+        1552,
+        1565,
+        1514,
+        1553,
+        1599,
+        1555,
+        1531,
+        1566,
+        1509,
+        1521,
+        1582,
+        1564,
+        1580,
+        1503,
+        1525,
+        1530
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 7756,
+            "p50": 0.12269110891505727,
+            "p90": 0.3905637285716965
+          },
+          "angular_velocity_norm": {
+            "count": 7756,
+            "p50": 0.46232992550252267,
+            "p90": 1.894729688366427
+          },
+          "linear_acceleration_norm": {
+            "count": 7820,
+            "p50": 0.7385407986598691,
+            "p90": 2.876491401712185
+          },
+          "angular_acceleration_norm": {
+            "count": 7820,
+            "p50": 3.0625272028885555,
+            "p90": 11.695819318385738
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 7976,
+            "p50": 0.11270592350556347,
+            "p90": 0.3727450415076131
+          },
+          "angular_velocity_norm": {
+            "count": 7976,
+            "p50": 0.40098504721399464,
+            "p90": 1.8338199382529132
+          },
+          "linear_acceleration_norm": {
+            "count": 8038,
+            "p50": 0.639610821497921,
+            "p90": 2.6688950762971424
+          },
+          "angular_acceleration_norm": {
+            "count": 8038,
+            "p50": 2.637813101974291,
+            "p90": 10.477379185048353
+          }
+        }
+      }
+    },
+    "match_and_pick_from_conveyor": {
+      "task_index": 16,
+      "instruction": "Remember the first object on the conveyor, then pick the matching object when it appears again.",
+      "episode_ids": [
+        1659,
+        1623,
+        1660,
+        1657,
+        1652,
+        1692,
+        1665,
+        1655,
+        1613,
+        1651,
+        1654,
+        1629,
+        1618,
+        1647,
+        1642,
+        1667,
+        1670,
+        1638,
+        1664,
+        1680
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 404,
+            "p50": 0.20880574981600986,
+            "p90": 0.3675292031108086
+          },
+          "angular_velocity_norm": {
+            "count": 404,
+            "p50": 0.5686749070898995,
+            "p90": 1.2973764258612677
+          },
+          "linear_acceleration_norm": {
+            "count": 411,
+            "p50": 0.7946641645947918,
+            "p90": 2.1983033563849537
+          },
+          "angular_acceleration_norm": {
+            "count": 411,
+            "p50": 2.603009117182901,
+            "p90": 6.571601572226314
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 1048,
+            "p50": 0.15633987339275657,
+            "p90": 0.3212730463515655
+          },
+          "angular_velocity_norm": {
+            "count": 1048,
+            "p50": 0.36789322855080586,
+            "p90": 1.0896749915192558
+          },
+          "linear_acceleration_norm": {
+            "count": 1061,
+            "p50": 0.6989617875639763,
+            "p90": 1.8182759721965387
+          },
+          "angular_acceleration_norm": {
+            "count": 1061,
+            "p50": 2.070452771153653,
+            "p90": 6.132187605485483
+          }
+        }
+      }
+    },
+    "organize_table": {
+      "task_index": 17,
+      "instruction": "Place the mouse on the mouse pad, push the keyboard into the frame, put the figurine on the stand, place the alarm clock on the drawer, then open the drawer and put all remaining miscellaneous items inside.",
+      "episode_ids": [
+        1766,
+        1733,
+        1759,
+        1786,
+        1751,
+        1740,
+        1785,
+        1718,
+        1745,
+        1773,
+        1738,
+        1769,
+        1799,
+        1728,
+        1742,
+        1780,
+        1794,
+        1747,
+        1764,
+        1744
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 9141,
+            "p50": 0.12636446008202387,
+            "p90": 0.4230946688416921
+          },
+          "angular_velocity_norm": {
+            "count": 9141,
+            "p50": 0.31823061153708354,
+            "p90": 1.3105620673767742
+          },
+          "linear_acceleration_norm": {
+            "count": 9178,
+            "p50": 0.6331363589654962,
+            "p90": 2.4750421423753917
+          },
+          "angular_acceleration_norm": {
+            "count": 9178,
+            "p50": 1.944742272898873,
+            "p90": 7.844867820703483
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 5570,
+            "p50": 0.10543382304155713,
+            "p90": 0.38688343721919666
+          },
+          "angular_velocity_norm": {
+            "count": 5570,
+            "p50": 0.25687662802855016,
+            "p90": 1.2589824768666977
+          },
+          "linear_acceleration_norm": {
+            "count": 5619,
+            "p50": 0.548606122362839,
+            "p90": 2.3978151075998677
+          },
+          "angular_acceleration_norm": {
+            "count": 5619,
+            "p50": 1.6247796818004927,
+            "p90": 7.911087747738578
+          }
+        }
+      }
+    },
+    "pack_objects_into_box": {
+      "task_index": 18,
+      "instruction": "Place all the objects into the box with their front sides facing left.",
+      "episode_ids": [
+        1807,
+        1820,
+        1899,
+        1805,
+        1892,
+        1822,
+        1898,
+        1844,
+        1856,
+        1869,
+        1883,
+        1867,
+        1879,
+        1811,
+        1852,
+        1857,
+        1858,
+        1859,
+        1875,
+        1842
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 8139,
+            "p50": 0.19026681820937147,
+            "p90": 0.47582393943117635
+          },
+          "angular_velocity_norm": {
+            "count": 8139,
+            "p50": 0.6451601886188292,
+            "p90": 2.0175511385384337
+          },
+          "linear_acceleration_norm": {
+            "count": 8164,
+            "p50": 1.077522860259903,
+            "p90": 2.822895214461681
+          },
+          "angular_acceleration_norm": {
+            "count": 8164,
+            "p50": 4.057738223421389,
+            "p90": 12.916587420061303
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 8944,
+            "p50": 0.1824836420146252,
+            "p90": 0.45509196157371395
+          },
+          "angular_velocity_norm": {
+            "count": 8944,
+            "p50": 0.5677662612064429,
+            "p90": 1.9127274329925457
+          },
+          "linear_acceleration_norm": {
+            "count": 8962,
+            "p50": 0.9271120054672315,
+            "p90": 2.5407166960948944
+          },
+          "angular_acceleration_norm": {
+            "count": 8962,
+            "p50": 3.297428596813508,
+            "p90": 11.240167875174976
+          }
+        }
+      }
+    },
+    "play_Xylophone": {
+      "task_index": 19,
+      "instruction": "Pick up the mallet and strike all xylophone keys from left to right.",
+      "episode_ids": [
+        1984,
+        1901,
+        1922,
+        1909,
+        1987,
+        1908,
+        1919,
+        1938,
+        1929,
+        1950,
+        1914,
+        1910,
+        1986,
+        1977,
+        1921,
+        1955,
+        1995,
+        1953,
+        1931,
+        1993
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 3760,
+            "p50": 0.22456860595515354,
+            "p90": 0.44215259080556035
+          },
+          "angular_velocity_norm": {
+            "count": 3760,
+            "p50": 0.17199367272753466,
+            "p90": 2.9294945977232523
+          },
+          "linear_acceleration_norm": {
+            "count": 3814,
+            "p50": 1.6063943864631764,
+            "p90": 3.3193140786105935
+          },
+          "angular_acceleration_norm": {
+            "count": 3814,
+            "p50": 2.3641736269155857,
+            "p90": 11.092425198420862
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 2528,
+            "p50": 0.2040326780559717,
+            "p90": 0.47561035475520647
+          },
+          "angular_velocity_norm": {
+            "count": 2528,
+            "p50": 0.13665599703417497,
+            "p90": 2.959504591843491
+          },
+          "linear_acceleration_norm": {
+            "count": 2570,
+            "p50": 1.7642808324858503,
+            "p90": 3.3383728784399955
+          },
+          "angular_acceleration_norm": {
+            "count": 2570,
+            "p50": 2.0708357309687986,
+            "p90": 11.655808206916236
+          }
+        }
+      }
+    },
+    "play_stacking_toy": {
+      "task_index": 20,
+      "instruction": "Place all stacking toy pieces onto the correct pegs.",
+      "episode_ids": [
+        2052,
+        2061,
+        2062,
+        2021,
+        2032,
+        2067,
+        2075,
+        2009,
+        2018,
+        2020,
+        2045,
+        2003,
+        2049,
+        2039,
+        2023,
+        2089,
+        2001,
+        2055,
+        2092,
+        2063
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 8882,
+            "p50": 0.21644898825827652,
+            "p90": 0.6622107840387419
+          },
+          "angular_velocity_norm": {
+            "count": 8882,
+            "p50": 0.12551782450296423,
+            "p90": 2.6732894094560464
+          },
+          "linear_acceleration_norm": {
+            "count": 9168,
+            "p50": 1.8399501184936984,
+            "p90": 3.652199783163133
+          },
+          "angular_acceleration_norm": {
+            "count": 9168,
+            "p50": 2.012139153240275,
+            "p90": 10.106193119106907
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 9142,
+            "p50": 0.23226406605053912,
+            "p90": 0.7621655687311888
+          },
+          "angular_velocity_norm": {
+            "count": 9142,
+            "p50": 0.12469868211004954,
+            "p90": 2.4881206252497705
+          },
+          "linear_acceleration_norm": {
+            "count": 9458,
+            "p50": 1.9824205813025504,
+            "p90": 3.9328623418538107
+          },
+          "angular_acceleration_norm": {
+            "count": 9458,
+            "p50": 1.7071674470539164,
+            "p90": 9.182119083088466
+          }
+        }
+      }
+    },
+    "play_tic_tac_toe": {
+      "task_index": 21,
+      "instruction": "Play tic-tac-toe as the first player and fill the board with the opponent.",
+      "episode_ids": [
+        2191,
+        2176,
+        2190,
+        2125,
+        2115,
+        2195,
+        2151,
+        2169,
+        2175,
+        2102,
+        2172,
+        2122,
+        2181,
+        2149,
+        2116,
+        2152,
+        2101,
+        2146,
+        2196,
+        2138
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 4362,
+            "p50": 0.19665292769342446,
+            "p90": 0.6199537046166411
+          },
+          "angular_velocity_norm": {
+            "count": 4362,
+            "p50": 0.0949865546281042,
+            "p90": 2.1724209817630706
+          },
+          "linear_acceleration_norm": {
+            "count": 4460,
+            "p50": 1.7493407173106386,
+            "p90": 3.207492237843875
+          },
+          "angular_acceleration_norm": {
+            "count": 4460,
+            "p50": 2.206302406898764,
+            "p90": 9.252699383747872
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 4839,
+            "p50": 0.19280649916951836,
+            "p90": 0.6394649287757596
+          },
+          "angular_velocity_norm": {
+            "count": 4839,
+            "p50": 0.09777362949175324,
+            "p90": 2.1667244551164355
+          },
+          "linear_acceleration_norm": {
+            "count": 4962,
+            "p50": 1.7621524332536505,
+            "p90": 3.296932526112775
+          },
+          "angular_acceleration_norm": {
+            "count": 4962,
+            "p50": 2.1066484428901333,
+            "p90": 9.279848708381351
+          }
+        }
+      }
+    },
+    "plug_in_charger": {
+      "task_index": 22,
+      "instruction": "Plug the charger into the power strip.",
+      "episode_ids": [
+        2234,
+        2264,
+        2209,
+        2242,
+        2294,
+        2221,
+        2298,
+        2295,
+        2297,
+        2224,
+        2249,
+        2290,
+        2289,
+        2257,
+        2218,
+        2216,
+        2271,
+        2241,
+        2220,
+        2201
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 2006,
+            "p50": 0.22251087312968304,
+            "p90": 0.5907567402492209
+          },
+          "angular_velocity_norm": {
+            "count": 2006,
+            "p50": 0.942193928943529,
+            "p90": 3.0914270461746365
+          },
+          "linear_acceleration_norm": {
+            "count": 2082,
+            "p50": 1.754415163298368,
+            "p90": 2.903901122716427
+          },
+          "angular_acceleration_norm": {
+            "count": 2082,
+            "p50": 5.426645109823212,
+            "p90": 12.083626915884404
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 2328,
+            "p50": 0.2238494980469482,
+            "p90": 0.5411972230787401
+          },
+          "angular_velocity_norm": {
+            "count": 2328,
+            "p50": 0.8745336510002261,
+            "p90": 3.10357672579663
+          },
+          "linear_acceleration_norm": {
+            "count": 2408,
+            "p50": 1.6259607542280672,
+            "p90": 2.8500167340069487
+          },
+          "angular_acceleration_norm": {
+            "count": 2408,
+            "p50": 5.177617488900235,
+            "p90": 12.187783928121421
+          }
+        }
+      }
+    },
+    "pour_balls_into_vase": {
+      "task_index": 23,
+      "instruction": "Pour all the balls from the cup into the vase.",
+      "episode_ids": [
+        2327,
+        2301,
+        2320,
+        2395,
+        2381,
+        2326,
+        2344,
+        2310,
+        2325,
+        2316,
+        2315,
+        2370,
+        2365,
+        2366,
+        2321,
+        2312,
+        2399,
+        2334,
+        2393,
+        2367
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 4531,
+            "p50": 0.08681488304035394,
+            "p90": 0.3276284327416582
+          },
+          "angular_velocity_norm": {
+            "count": 4531,
+            "p50": 0.28163250330158485,
+            "p90": 1.6010770778047168
+          },
+          "linear_acceleration_norm": {
+            "count": 4557,
+            "p50": 0.5099203787570139,
+            "p90": 1.7895140100530769
+          },
+          "angular_acceleration_norm": {
+            "count": 4557,
+            "p50": 1.7706855589784265,
+            "p90": 7.761687252196302
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 3621,
+            "p50": 0.09639142064865987,
+            "p90": 0.3224213117406492
+          },
+          "angular_velocity_norm": {
+            "count": 3621,
+            "p50": 0.30343736857547515,
+            "p90": 1.6135224594445274
+          },
+          "linear_acceleration_norm": {
+            "count": 3669,
+            "p50": 0.478259853924817,
+            "p90": 1.5441812283539211
+          },
+          "angular_acceleration_norm": {
+            "count": 3669,
+            "p50": 1.4569221705242457,
+            "p90": 6.5772232445174135
+          }
+        }
+      }
+    },
+    "pour_liquid_into_cup": {
+      "task_index": 24,
+      "instruction": "Pour the liquid from the bottle into the cup.",
+      "episode_ids": [
+        2409,
+        2408,
+        2422,
+        2440,
+        2463,
+        2435,
+        2405,
+        2410,
+        2469,
+        2455,
+        2491,
+        2446,
+        2457,
+        2420,
+        2418,
+        2466,
+        2419,
+        2451,
+        2430,
+        2458
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 3346,
+            "p50": 0.05934394243050487,
+            "p90": 0.2511495001187954
+          },
+          "angular_velocity_norm": {
+            "count": 3346,
+            "p50": 0.3682928241983427,
+            "p90": 2.0440749436783605
+          },
+          "linear_acceleration_norm": {
+            "count": 3362,
+            "p50": 0.4018625814296468,
+            "p90": 1.9049390931308543
+          },
+          "angular_acceleration_norm": {
+            "count": 3362,
+            "p50": 1.7546468050610797,
+            "p90": 10.058095691888997
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 1223,
+            "p50": 0.06485877323679677,
+            "p90": 0.2462023618322715
+          },
+          "angular_velocity_norm": {
+            "count": 1223,
+            "p50": 0.32389070823400856,
+            "p90": 1.970542554276894
+          },
+          "linear_acceleration_norm": {
+            "count": 1233,
+            "p50": 0.36806405246950263,
+            "p90": 1.6189830740578801
+          },
+          "angular_acceleration_norm": {
+            "count": 1233,
+            "p50": 1.464420543300692,
+            "p90": 8.47614187904341
+          }
+        }
+      }
+    },
+    "press_by_number": {
+      "task_index": 25,
+      "instruction": "Press the two red buttons the required number of times according to the number cards, then press the blue button to confirm.",
+      "episode_ids": [
+        2520,
+        2551,
+        2532,
+        2559,
+        2597,
+        2590,
+        2562,
+        2546,
+        2533,
+        2593,
+        2564,
+        2588,
+        2586,
+        2592,
+        2524,
+        2573,
+        2541,
+        2584,
+        2519,
+        2554
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 4703,
+            "p50": 0.23298427795198692,
+            "p90": 0.5593066315724534
+          },
+          "angular_velocity_norm": {
+            "count": 4703,
+            "p50": 0.05587499272275041,
+            "p90": 2.7004346386600586
+          },
+          "linear_acceleration_norm": {
+            "count": 4849,
+            "p50": 1.9687184944139722,
+            "p90": 3.1800215510537098
+          },
+          "angular_acceleration_norm": {
+            "count": 4849,
+            "p50": 1.7647686140186805,
+            "p90": 9.750438962341656
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 2539,
+            "p50": 0.26709752511375234,
+            "p90": 0.5422219137264037
+          },
+          "angular_velocity_norm": {
+            "count": 2539,
+            "p50": 1.1374973428323965,
+            "p90": 2.958757308876765
+          },
+          "linear_acceleration_norm": {
+            "count": 2664,
+            "p50": 1.8166783116955698,
+            "p90": 2.7525029538724675
+          },
+          "angular_acceleration_norm": {
+            "count": 2664,
+            "p50": 5.384149886046643,
+            "p90": 11.943715715052386
+          }
+        }
+      }
+    },
+    "push_T": {
+      "task_index": 26,
+      "instruction": "Push the T-shaped block to align it precisely with the gray T-shaped pad.",
+      "episode_ids": [
+        2670,
+        2632,
+        2669,
+        2606,
+        2681,
+        2698,
+        2629,
+        2604,
+        2651,
+        2635,
+        2664,
+        2684,
+        2636,
+        2625,
+        2622,
+        2621,
+        2661,
+        2676,
+        2693,
+        2667
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 2972,
+            "p50": 0.12546404176540357,
+            "p90": 0.3191429102827179
+          },
+          "angular_velocity_norm": {
+            "count": 2972,
+            "p50": 0.3728961785108932,
+            "p90": 1.6953330934475837
+          },
+          "linear_acceleration_norm": {
+            "count": 2979,
+            "p50": 0.6467140596209734,
+            "p90": 2.263479005318243
+          },
+          "angular_acceleration_norm": {
+            "count": 2979,
+            "p50": 2.087797209202619,
+            "p90": 8.990738702904698
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 3464,
+            "p50": 0.1267370081711422,
+            "p90": 0.33343789100426957
+          },
+          "angular_velocity_norm": {
+            "count": 3464,
+            "p50": 0.32743253651927884,
+            "p90": 1.5980525876964031
+          },
+          "linear_acceleration_norm": {
+            "count": 3471,
+            "p50": 0.7277257874865277,
+            "p90": 2.290323776617303
+          },
+          "angular_acceleration_norm": {
+            "count": 3471,
+            "p50": 1.9399568596296586,
+            "p90": 8.290847042919289
+          }
+        }
+      }
+    },
+    "put_bottles_into_dustbin": {
+      "task_index": 27,
+      "instruction": "Pick up the bottles and throw them into the dustbin, using handover when needed.",
+      "episode_ids": [
+        2773,
+        2782,
+        2769,
+        2751,
+        2796,
+        2736,
+        2733,
+        2746,
+        2797,
+        2721,
+        2726,
+        2789,
+        2737,
+        2752,
+        2724,
+        2747,
+        2713,
+        2762,
+        2781,
+        2725
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 6905,
+            "p50": 0.24958624897091927,
+            "p90": 0.5417569404994175
+          },
+          "angular_velocity_norm": {
+            "count": 6905,
+            "p50": 0.6139888501563467,
+            "p90": 1.8387912851618262
+          },
+          "linear_acceleration_norm": {
+            "count": 6933,
+            "p50": 1.1122314794903216,
+            "p90": 2.487617768668614
+          },
+          "angular_acceleration_norm": {
+            "count": 6933,
+            "p50": 3.0664255636881,
+            "p90": 8.851525865880866
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 3357,
+            "p50": 0.1490784593159566,
+            "p90": 0.4686496742837772
+          },
+          "angular_velocity_norm": {
+            "count": 3357,
+            "p50": 0.5150177735485588,
+            "p90": 2.1373649054383925
+          },
+          "linear_acceleration_norm": {
+            "count": 3419,
+            "p50": 0.9980890310694259,
+            "p90": 2.5584318633408714
+          },
+          "angular_acceleration_norm": {
+            "count": 3419,
+            "p50": 3.618530106775337,
+            "p90": 11.027918967411411
+          }
+        }
+      }
+    },
+    "sort_nesting_dolls_by_size": {
+      "task_index": 28,
+      "instruction": "Arrange the five nesting dolls in a row from left to right, from smallest to largest.",
+      "episode_ids": [
+        2874,
+        2879,
+        2863,
+        2816,
+        2888,
+        2823,
+        2803,
+        2836,
+        2837,
+        2809,
+        2875,
+        2805,
+        2898,
+        2880,
+        2814,
+        2847,
+        2881,
+        2889,
+        2858,
+        2846
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 5777,
+            "p50": 0.31354884793642235,
+            "p90": 0.631431094270143
+          },
+          "angular_velocity_norm": {
+            "count": 5777,
+            "p50": 0.14556235882627783,
+            "p90": 1.7906877100585774
+          },
+          "linear_acceleration_norm": {
+            "count": 5969,
+            "p50": 2.191557832803515,
+            "p90": 3.9090416401327848
+          },
+          "angular_acceleration_norm": {
+            "count": 5969,
+            "p50": 2.530623114580472,
+            "p90": 7.973041578706865
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 5868,
+            "p50": 0.2944871640111015,
+            "p90": 0.5973055375158579
+          },
+          "angular_velocity_norm": {
+            "count": 5868,
+            "p50": 0.13677203941433064,
+            "p90": 2.1451807494607595
+          },
+          "linear_acceleration_norm": {
+            "count": 6071,
+            "p50": 2.0894275366992616,
+            "p90": 3.8029108092547212
+          },
+          "angular_acceleration_norm": {
+            "count": 6071,
+            "p50": 2.5173249572668475,
+            "p90": 9.704081259672778
+          }
+        }
+      }
+    },
+    "stack_blocks": {
+      "task_index": 29,
+      "instruction": "Stack the three blocks with different textures.",
+      "episode_ids": [
+        2912,
+        2943,
+        2942,
+        2949,
+        2939,
+        2907,
+        2945,
+        2913,
+        2973,
+        2900,
+        2909,
+        2963,
+        2941,
+        2940,
+        2998,
+        2961,
+        2916,
+        2994,
+        2983,
+        2974
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 2917,
+            "p50": 0.25052626373829423,
+            "p90": 0.7658439406773968
+          },
+          "angular_velocity_norm": {
+            "count": 2917,
+            "p50": 0.039084073632714274,
+            "p90": 2.5796562594939907
+          },
+          "linear_acceleration_norm": {
+            "count": 3005,
+            "p50": 2.3064476857562632,
+            "p90": 3.872744683842533
+          },
+          "angular_acceleration_norm": {
+            "count": 3005,
+            "p50": 0.9814707782599998,
+            "p90": 8.845771712421932
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 2078,
+            "p50": 0.22976224109864202,
+            "p90": 0.748955987008587
+          },
+          "angular_velocity_norm": {
+            "count": 2078,
+            "p50": 0.04528287260178383,
+            "p90": 2.6650528554816044
+          },
+          "linear_acceleration_norm": {
+            "count": 2138,
+            "p50": 2.1191301637373243,
+            "p90": 3.637424817356306
+          },
+          "angular_acceleration_norm": {
+            "count": 2138,
+            "p50": 1.1590453115624435,
+            "p90": 9.375594291362626
+          }
+        }
+      }
+    },
+    "stack_bowls": {
+      "task_index": 30,
+      "instruction": "Stack the three bowls together.",
+      "episode_ids": [
+        3065,
+        3042,
+        3049,
+        3014,
+        3058,
+        3043,
+        3061,
+        3037,
+        3019,
+        3093,
+        3095,
+        3094,
+        3079,
+        3004,
+        3022,
+        3053,
+        3086,
+        3068,
+        3018,
+        3096
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 4236,
+            "p50": 0.10237476205517022,
+            "p90": 0.3892883963399282
+          },
+          "angular_velocity_norm": {
+            "count": 4236,
+            "p50": 0.22604554290333798,
+            "p90": 1.247971386313677
+          },
+          "linear_acceleration_norm": {
+            "count": 4252,
+            "p50": 0.38179147948193276,
+            "p90": 2.0010293039062135
+          },
+          "angular_acceleration_norm": {
+            "count": 4252,
+            "p50": 1.2616332037512417,
+            "p90": 5.819863928799572
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 4641,
+            "p50": 0.09518130362176665,
+            "p90": 0.3234931259258095
+          },
+          "angular_velocity_norm": {
+            "count": 4641,
+            "p50": 0.24077117885171556,
+            "p90": 1.1914629713417484
+          },
+          "linear_acceleration_norm": {
+            "count": 4662,
+            "p50": 0.38165120696315424,
+            "p90": 1.5180317950095386
+          },
+          "angular_acceleration_norm": {
+            "count": 4662,
+            "p50": 1.2466779160971209,
+            "p90": 5.128563047683085
+          }
+        }
+      }
+    },
+    "store_laptop_and_headphones": {
+      "task_index": 31,
+      "instruction": "Hang the headphones on the headphone stand, close the laptop, then place it into the vertical laptop stand.",
+      "episode_ids": [
+        3102,
+        3100,
+        3127,
+        3112,
+        3198,
+        3128,
+        3108,
+        3197,
+        3150,
+        3132,
+        3192,
+        3169,
+        3159,
+        3133,
+        3113,
+        3145,
+        3186,
+        3101,
+        3165,
+        3134
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 7156,
+            "p50": 0.11325965338105005,
+            "p90": 0.33135538605240594
+          },
+          "angular_velocity_norm": {
+            "count": 7156,
+            "p50": 0.4048968308410474,
+            "p90": 1.9301370475450828
+          },
+          "linear_acceleration_norm": {
+            "count": 7224,
+            "p50": 0.585081936174185,
+            "p90": 1.8030730501389824
+          },
+          "angular_acceleration_norm": {
+            "count": 7224,
+            "p50": 2.2474284778612823,
+            "p90": 9.519059012704423
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 6598,
+            "p50": 0.12407619985843438,
+            "p90": 0.4322778732123048
+          },
+          "angular_velocity_norm": {
+            "count": 6598,
+            "p50": 0.5016657578969442,
+            "p90": 2.0857004657061653
+          },
+          "linear_acceleration_norm": {
+            "count": 6640,
+            "p50": 0.6872060708287546,
+            "p90": 2.3255200795574766
+          },
+          "angular_acceleration_norm": {
+            "count": 6640,
+            "p50": 2.6547223330980967,
+            "p90": 10.320542668408548
+          }
+        }
+      }
+    },
+    "swap_T": {
+      "task_index": 32,
+      "instruction": "Pick up the two T-shaped blocks, swap their positions, and place them back with the correct orientations.",
+      "episode_ids": [
+        3222,
+        3254,
+        3229,
+        3208,
+        3237,
+        3287,
+        3259,
+        3207,
+        3285,
+        3294,
+        3238,
+        3267,
+        3225,
+        3255,
+        3212,
+        3236,
+        3231,
+        3281,
+        3245,
+        3298
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 2429,
+            "p50": 0.4100224587181021,
+            "p90": 0.8247996948596839
+          },
+          "angular_velocity_norm": {
+            "count": 2429,
+            "p50": 1.7951073545220926,
+            "p90": 3.6494144793726333
+          },
+          "linear_acceleration_norm": {
+            "count": 2506,
+            "p50": 2.506657462256472,
+            "p90": 3.7848886104901966
+          },
+          "angular_acceleration_norm": {
+            "count": 2506,
+            "p50": 6.968981957876613,
+            "p90": 12.975744756242245
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 2424,
+            "p50": 0.38576781275613575,
+            "p90": 0.7943752032436583
+          },
+          "angular_velocity_norm": {
+            "count": 2424,
+            "p50": 1.7716522413430988,
+            "p90": 3.634663411816046
+          },
+          "linear_acceleration_norm": {
+            "count": 2531,
+            "p50": 2.3611194966626856,
+            "p90": 3.649303196531919
+          },
+          "angular_acceleration_norm": {
+            "count": 2531,
+            "p50": 7.1060550382549845,
+            "p90": 13.337692251280815
+          }
+        }
+      }
+    },
+    "swap_blocks": {
+      "task_index": 33,
+      "instruction": "Swap the two blocks using the empty mat, pressing the button after each move.",
+      "episode_ids": [
+        3305,
+        3330,
+        3352,
+        3338,
+        3324,
+        3395,
+        3316,
+        3351,
+        3388,
+        3392,
+        3303,
+        3317,
+        3371,
+        3302,
+        3384,
+        3311,
+        3393,
+        3348,
+        3345,
+        3315
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 3088,
+            "p50": 0.2151717466195674,
+            "p90": 0.5318867484362074
+          },
+          "angular_velocity_norm": {
+            "count": 3088,
+            "p50": 0.14360714984240933,
+            "p90": 2.8617325594169825
+          },
+          "linear_acceleration_norm": {
+            "count": 3226,
+            "p50": 1.6261400339152783,
+            "p90": 2.891005081345175
+          },
+          "angular_acceleration_norm": {
+            "count": 3226,
+            "p50": 2.663537448935628,
+            "p90": 11.376001813333241
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 4589,
+            "p50": 0.1910443288596572,
+            "p90": 0.5438979759325376
+          },
+          "angular_velocity_norm": {
+            "count": 4589,
+            "p50": 0.09491190256263957,
+            "p90": 2.706062443884694
+          },
+          "linear_acceleration_norm": {
+            "count": 4756,
+            "p50": 1.5209310120220447,
+            "p90": 3.051319304431482
+          },
+          "angular_acceleration_norm": {
+            "count": 4756,
+            "p50": 2.1904853520190377,
+            "p90": 11.044621726994249
+          }
+        }
+      }
+    },
+    "sweep_blocks": {
+      "task_index": 34,
+      "instruction": "Pick up the broom, hand it over to the right hand, then use the dustpan to sweep the blocks.",
+      "episode_ids": [
+        3488,
+        3461,
+        3482,
+        3499,
+        3415,
+        3479,
+        3450,
+        3487,
+        3474,
+        3412,
+        3421,
+        3432,
+        3436,
+        3463,
+        3416,
+        3460,
+        3439,
+        3435,
+        3473,
+        3469
+      ],
+      "arms": {
+        "left": {
+          "linear_velocity_norm": {
+            "count": 5786,
+            "p50": 0.13632239899798043,
+            "p90": 0.4599873353093137
+          },
+          "angular_velocity_norm": {
+            "count": 5786,
+            "p50": 0.427277371040312,
+            "p90": 2.1343370968747837
+          },
+          "linear_acceleration_norm": {
+            "count": 5916,
+            "p50": 0.6854420458735193,
+            "p90": 2.8115035355406386
+          },
+          "angular_acceleration_norm": {
+            "count": 5916,
+            "p50": 2.6687263167619193,
+            "p90": 11.20923401265723
+          }
+        },
+        "right": {
+          "linear_velocity_norm": {
+            "count": 7437,
+            "p50": 0.14525040644441095,
+            "p90": 0.3263504752399196
+          },
+          "angular_velocity_norm": {
+            "count": 7437,
+            "p50": 0.38205100106846296,
+            "p90": 1.3351516069187364
+          },
+          "linear_acceleration_norm": {
+            "count": 7482,
+            "p50": 0.740148335006301,
+            "p90": 2.20880365272365
+          },
+          "angular_acceleration_norm": {
+            "count": 7482,
+            "p50": 2.1230412884681185,
+            "p90": 8.1896650212944
+          }
+        }
+      }
+    }
+  }
+}

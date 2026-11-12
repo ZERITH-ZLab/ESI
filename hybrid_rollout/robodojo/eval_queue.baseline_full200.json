@@ -1,0 +1,935 @@
+{
+  "schema": "robodojo.eval_sequence.v1",
+  "name": "multitask10_base_eval200_taskonly_noguidance_nods_nohold_v1",
+  "workers": 8,
+  "account_pool_file": "/root/.config/gpt-as-policy/account_pool.json",
+  "scheduling": "cross_task_queue_v1",
+  "teacher": {
+    "model": "gpt-6-astra",
+    "effort": "xhigh",
+    "image_max_edge": 480,
+    "auto_compact_token_limit": 96000
+  },
+  "models": [
+    {
+      "task": "pack_objects_into_box",
+      "experiment": "multitask10_base_eval200_taskonly_noguidance_nods_nohold_v1__pack_objects_into_box",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ],
+        [
+          "standard",
+          2
+        ],
+        [
+          "standard",
+          3
+        ],
+        [
+          "standard",
+          4
+        ],
+        [
+          "standard",
+          5
+        ],
+        [
+          "standard",
+          6
+        ],
+        [
+          "standard",
+          7
+        ],
+        [
+          "standard",
+          8
+        ],
+        [
+          "standard",
+          9
+        ],
+        [
+          "random",
+          0
+        ],
+        [
+          "random",
+          1
+        ],
+        [
+          "random",
+          2
+        ],
+        [
+          "random",
+          3
+        ],
+        [
+          "random",
+          4
+        ],
+        [
+          "random",
+          5
+        ],
+        [
+          "random",
+          6
+        ],
+        [
+          "random",
+          7
+        ],
+        [
+          "random",
+          8
+        ],
+        [
+          "random",
+          9
+        ]
+      ],
+      "checkpoint": "/mnt/models/robodojo_pi05/59999",
+      "policy_input": "task_only",
+      "prompt_profile": "baseline_task_only_v1",
+      "downsampling": {
+        "mode": "off"
+      }
+    },
+    {
+      "task": "arrange_largest_number",
+      "experiment": "multitask10_base_eval200_taskonly_noguidance_nods_nohold_v1__arrange_largest_number",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ],
+        [
+          "standard",
+          2
+        ],
+        [
+          "standard",
+          3
+        ],
+        [
+          "standard",
+          4
+        ],
+        [
+          "standard",
+          5
+        ],
+        [
+          "standard",
+          6
+        ],
+        [
+          "standard",
+          7
+        ],
+        [
+          "standard",
+          8
+        ],
+        [
+          "standard",
+          9
+        ],
+        [
+          "random",
+          0
+        ],
+        [
+          "random",
+          1
+        ],
+        [
+          "random",
+          2
+        ],
+        [
+          "random",
+          3
+        ],
+        [
+          "random",
+          4
+        ],
+        [
+          "random",
+          5
+        ],
+        [
+          "random",
+          6
+        ],
+        [
+          "random",
+          7
+        ],
+        [
+          "random",
+          8
+        ],
+        [
+          "random",
+          9
+        ]
+      ],
+      "checkpoint": "/mnt/models/robodojo_pi05/59999",
+      "policy_input": "task_only",
+      "prompt_profile": "baseline_task_only_v1",
+      "downsampling": {
+        "mode": "off"
+      }
+    },
+    {
+      "task": "sort_nesting_dolls_by_size",
+      "experiment": "multitask10_base_eval200_taskonly_noguidance_nods_nohold_v1__sort_nesting_dolls_by_size",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ],
+        [
+          "standard",
+          2
+        ],
+        [
+          "standard",
+          3
+        ],
+        [
+          "standard",
+          4
+        ],
+        [
+          "standard",
+          5
+        ],
+        [
+          "standard",
+          6
+        ],
+        [
+          "standard",
+          7
+        ],
+        [
+          "standard",
+          8
+        ],
+        [
+          "standard",
+          9
+        ],
+        [
+          "random",
+          0
+        ],
+        [
+          "random",
+          1
+        ],
+        [
+          "random",
+          2
+        ],
+        [
+          "random",
+          3
+        ],
+        [
+          "random",
+          4
+        ],
+        [
+          "random",
+          5
+        ],
+        [
+          "random",
+          6
+        ],
+        [
+          "random",
+          7
+        ],
+        [
+          "random",
+          8
+        ],
+        [
+          "random",
+          9
+        ]
+      ],
+      "checkpoint": "/mnt/models/robodojo_pi05/59999",
+      "policy_input": "task_only",
+      "prompt_profile": "baseline_task_only_v1",
+      "downsampling": {
+        "mode": "off"
+      }
+    },
+    {
+      "task": "classify_objects",
+      "experiment": "multitask10_base_eval200_taskonly_noguidance_nods_nohold_v1__classify_objects",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ],
+        [
+          "standard",
+          2
+        ],
+        [
+          "standard",
+          3
+        ],
+        [
+          "standard",
+          4
+        ],
+        [
+          "standard",
+          5
+        ],
+        [
+          "standard",
+          6
+        ],
+        [
+          "standard",
+          7
+        ],
+        [
+          "standard",
+          8
+        ],
+        [
+          "standard",
+          9
+        ],
+        [
+          "standard",
+          10
+        ],
+        [
+          "standard",
+          11
+        ],
+        [
+          "standard",
+          12
+        ],
+        [
+          "standard",
+          13
+        ],
+        [
+          "standard",
+          14
+        ],
+        [
+          "standard",
+          15
+        ],
+        [
+          "standard",
+          16
+        ],
+        [
+          "standard",
+          17
+        ],
+        [
+          "standard",
+          18
+        ],
+        [
+          "standard",
+          19
+        ]
+      ],
+      "checkpoint": "/mnt/models/robodojo_pi05/59999",
+      "policy_input": "task_only",
+      "prompt_profile": "baseline_task_only_v1",
+      "downsampling": {
+        "mode": "off"
+      }
+    },
+    {
+      "task": "fill_pen_holder",
+      "experiment": "multitask10_base_eval200_taskonly_noguidance_nods_nohold_v1__fill_pen_holder",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ],
+        [
+          "standard",
+          2
+        ],
+        [
+          "standard",
+          3
+        ],
+        [
+          "standard",
+          4
+        ],
+        [
+          "standard",
+          5
+        ],
+        [
+          "standard",
+          6
+        ],
+        [
+          "standard",
+          7
+        ],
+        [
+          "standard",
+          8
+        ],
+        [
+          "standard",
+          9
+        ],
+        [
+          "standard",
+          10
+        ],
+        [
+          "standard",
+          11
+        ],
+        [
+          "standard",
+          12
+        ],
+        [
+          "standard",
+          13
+        ],
+        [
+          "standard",
+          14
+        ],
+        [
+          "standard",
+          15
+        ],
+        [
+          "standard",
+          16
+        ],
+        [
+          "standard",
+          17
+        ],
+        [
+          "standard",
+          18
+        ],
+        [
+          "standard",
+          19
+        ]
+      ],
+      "checkpoint": "/mnt/models/robodojo_pi05/59999",
+      "policy_input": "task_only",
+      "prompt_profile": "baseline_task_only_v1",
+      "downsampling": {
+        "mode": "off"
+      }
+    },
+    {
+      "task": "organize_table",
+      "experiment": "multitask10_base_eval200_taskonly_noguidance_nods_nohold_v1__organize_table",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ],
+        [
+          "standard",
+          2
+        ],
+        [
+          "standard",
+          3
+        ],
+        [
+          "standard",
+          4
+        ],
+        [
+          "standard",
+          5
+        ],
+        [
+          "standard",
+          6
+        ],
+        [
+          "standard",
+          7
+        ],
+        [
+          "standard",
+          8
+        ],
+        [
+          "standard",
+          9
+        ],
+        [
+          "standard",
+          10
+        ],
+        [
+          "standard",
+          11
+        ],
+        [
+          "standard",
+          12
+        ],
+        [
+          "standard",
+          13
+        ],
+        [
+          "standard",
+          14
+        ],
+        [
+          "standard",
+          15
+        ],
+        [
+          "standard",
+          16
+        ],
+        [
+          "standard",
+          17
+        ],
+        [
+          "standard",
+          18
+        ],
+        [
+          "standard",
+          19
+        ]
+      ],
+      "checkpoint": "/mnt/models/robodojo_pi05/59999",
+      "policy_input": "task_only",
+      "prompt_profile": "baseline_task_only_v1",
+      "downsampling": {
+        "mode": "off"
+      }
+    },
+    {
+      "task": "imitate_sorting_sequence",
+      "experiment": "multitask10_base_eval200_taskonly_noguidance_nods_nohold_v1__imitate_sorting_sequence",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ],
+        [
+          "standard",
+          2
+        ],
+        [
+          "standard",
+          3
+        ],
+        [
+          "standard",
+          4
+        ],
+        [
+          "standard",
+          5
+        ],
+        [
+          "standard",
+          6
+        ],
+        [
+          "standard",
+          7
+        ],
+        [
+          "standard",
+          8
+        ],
+        [
+          "standard",
+          9
+        ],
+        [
+          "standard",
+          10
+        ],
+        [
+          "standard",
+          11
+        ],
+        [
+          "standard",
+          12
+        ],
+        [
+          "standard",
+          13
+        ],
+        [
+          "standard",
+          14
+        ],
+        [
+          "standard",
+          15
+        ],
+        [
+          "standard",
+          16
+        ],
+        [
+          "standard",
+          17
+        ],
+        [
+          "standard",
+          18
+        ],
+        [
+          "standard",
+          19
+        ]
+      ],
+      "checkpoint": "/mnt/models/robodojo_pi05/59999",
+      "policy_input": "task_only",
+      "prompt_profile": "baseline_task_only_v1",
+      "downsampling": {
+        "mode": "off"
+      }
+    },
+    {
+      "task": "stack_blocks_by_language",
+      "experiment": "multitask10_base_eval200_taskonly_noguidance_nods_nohold_v1__stack_blocks_by_language",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ],
+        [
+          "standard",
+          2
+        ],
+        [
+          "standard",
+          3
+        ],
+        [
+          "standard",
+          4
+        ],
+        [
+          "standard",
+          5
+        ],
+        [
+          "standard",
+          6
+        ],
+        [
+          "standard",
+          7
+        ],
+        [
+          "standard",
+          8
+        ],
+        [
+          "standard",
+          9
+        ],
+        [
+          "standard",
+          10
+        ],
+        [
+          "standard",
+          11
+        ],
+        [
+          "standard",
+          12
+        ],
+        [
+          "standard",
+          13
+        ],
+        [
+          "standard",
+          14
+        ],
+        [
+          "standard",
+          15
+        ],
+        [
+          "standard",
+          16
+        ],
+        [
+          "standard",
+          17
+        ],
+        [
+          "standard",
+          18
+        ],
+        [
+          "standard",
+          19
+        ]
+      ],
+      "checkpoint": "/mnt/models/robodojo_pi05/59999",
+      "policy_input": "task_only",
+      "prompt_profile": "baseline_task_only_v1",
+      "downsampling": {
+        "mode": "off"
+      }
+    },
+    {
+      "task": "classify_objects_by_language",
+      "experiment": "multitask10_base_eval200_taskonly_noguidance_nods_nohold_v1__classify_objects_by_language",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ],
+        [
+          "standard",
+          2
+        ],
+        [
+          "standard",
+          3
+        ],
+        [
+          "standard",
+          4
+        ],
+        [
+          "standard",
+          5
+        ],
+        [
+          "standard",
+          6
+        ],
+        [
+          "standard",
+          7
+        ],
+        [
+          "standard",
+          8
+        ],
+        [
+          "standard",
+          9
+        ],
+        [
+          "standard",
+          10
+        ],
+        [
+          "standard",
+          11
+        ],
+        [
+          "standard",
+          12
+        ],
+        [
+          "standard",
+          13
+        ],
+        [
+          "standard",
+          14
+        ],
+        [
+          "standard",
+          15
+        ],
+        [
+          "standard",
+          16
+        ],
+        [
+          "standard",
+          17
+        ],
+        [
+          "standard",
+          18
+        ],
+        [
+          "standard",
+          19
+        ]
+      ],
+      "checkpoint": "/mnt/models/robodojo_pi05/59999",
+      "policy_input": "task_only",
+      "prompt_profile": "baseline_task_only_v1",
+      "downsampling": {
+        "mode": "off"
+      }
+    },
+    {
+      "task": "sweep_blocks",
+      "experiment": "multitask10_base_eval200_taskonly_noguidance_nods_nohold_v1__sweep_blocks",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ],
+        [
+          "standard",
+          2
+        ],
+        [
+          "standard",
+          3
+        ],
+        [
+          "standard",
+          4
+        ],
+        [
+          "standard",
+          5
+        ],
+        [
+          "standard",
+          6
+        ],
+        [
+          "standard",
+          7
+        ],
+        [
+          "standard",
+          8
+        ],
+        [
+          "standard",
+          9
+        ],
+        [
+          "random",
+          0
+        ],
+        [
+          "random",
+          1
+        ],
+        [
+          "random",
+          2
+        ],
+        [
+          "random",
+          3
+        ],
+        [
+          "random",
+          4
+        ],
+        [
+          "random",
+          5
+        ],
+        [
+          "random",
+          6
+        ],
+        [
+          "random",
+          7
+        ],
+        [
+          "random",
+          8
+        ],
+        [
+          "random",
+          9
+        ]
+      ],
+      "checkpoint": "/mnt/models/robodojo_pi05/59999",
+      "policy_input": "task_only",
+      "prompt_profile": "baseline_task_only_v1",
+      "downsampling": {
+        "mode": "off"
+      }
+    }
+  ]
+}

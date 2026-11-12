@@ -1,0 +1,310 @@
+{
+  "schema": "robodojo.eval_sequence.v1",
+  "name": "multitask10_round3_eval20_subtask_ds005_nohold_v1_queue8",
+  "workers": 8,
+  "account_pool_file": "/root/.config/gpt-as-policy/account_pool.json",
+  "models": [
+    {
+      "experiment": "multitask10_round3_eval20_subtask_ds005_nohold_v1__eps0p005__pack_objects_into_box",
+      "task": "pack_objects_into_box",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ]
+      ],
+      "checkpoint": "/mnt/models/esi-final",
+      "policy_input": "task_subtask",
+      "downsampling": {
+        "mode": "error",
+        "config": {
+          "position_error_m": 0.002,
+          "rotation_error_rad": 0.02,
+          "max_skipped": 3,
+          "max_joint_jump_rad": 0.15,
+          "gripper_epsilon": 0.005,
+          "gripper_guard": 1,
+          "closing_hold_ticks": 15,
+          "gripper_reconstruction_error": 0.002,
+          "max_gripper_jump": 0.01
+        }
+      }
+    },
+    {
+      "experiment": "multitask10_round3_eval20_subtask_ds005_nohold_v1__eps0p005__arrange_largest_number",
+      "task": "arrange_largest_number",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ]
+      ],
+      "checkpoint": "/mnt/models/esi-final",
+      "policy_input": "task_subtask",
+      "downsampling": {
+        "mode": "error",
+        "config": {
+          "position_error_m": 0.002,
+          "rotation_error_rad": 0.02,
+          "max_skipped": 3,
+          "max_joint_jump_rad": 0.15,
+          "gripper_epsilon": 0.005,
+          "gripper_guard": 1,
+          "closing_hold_ticks": 15,
+          "gripper_reconstruction_error": 0.002,
+          "max_gripper_jump": 0.01
+        }
+      }
+    },
+    {
+      "experiment": "multitask10_round3_eval20_subtask_ds005_nohold_v1__eps0p005__sort_nesting_dolls_by_size",
+      "task": "sort_nesting_dolls_by_size",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ]
+      ],
+      "checkpoint": "/mnt/models/esi-final",
+      "policy_input": "task_subtask",
+      "downsampling": {
+        "mode": "error",
+        "config": {
+          "position_error_m": 0.002,
+          "rotation_error_rad": 0.02,
+          "max_skipped": 3,
+          "max_joint_jump_rad": 0.15,
+          "gripper_epsilon": 0.005,
+          "gripper_guard": 1,
+          "closing_hold_ticks": 15,
+          "gripper_reconstruction_error": 0.002,
+          "max_gripper_jump": 0.01
+        }
+      }
+    },
+    {
+      "experiment": "multitask10_round3_eval20_subtask_ds005_nohold_v1__eps0p005__classify_objects",
+      "task": "classify_objects",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ]
+      ],
+      "checkpoint": "/mnt/models/esi-final",
+      "policy_input": "task_subtask",
+      "downsampling": {
+        "mode": "error",
+        "config": {
+          "position_error_m": 0.002,
+          "rotation_error_rad": 0.02,
+          "max_skipped": 3,
+          "max_joint_jump_rad": 0.15,
+          "gripper_epsilon": 0.005,
+          "gripper_guard": 1,
+          "closing_hold_ticks": 15,
+          "gripper_reconstruction_error": 0.002,
+          "max_gripper_jump": 0.01
+        }
+      }
+    },
+    {
+      "experiment": "multitask10_round3_eval20_subtask_ds005_nohold_v1__eps0p005__fill_pen_holder",
+      "task": "fill_pen_holder",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ]
+      ],
+      "checkpoint": "/mnt/models/esi-final",
+      "policy_input": "task_subtask",
+      "downsampling": {
+        "mode": "error",
+        "config": {
+          "position_error_m": 0.002,
+          "rotation_error_rad": 0.02,
+          "max_skipped": 3,
+          "max_joint_jump_rad": 0.15,
+          "gripper_epsilon": 0.005,
+          "gripper_guard": 1,
+          "closing_hold_ticks": 15,
+          "gripper_reconstruction_error": 0.002,
+          "max_gripper_jump": 0.01
+        }
+      }
+    },
+    {
+      "experiment": "multitask10_round3_eval20_subtask_ds005_nohold_v1__eps0p005__organize_table",
+      "task": "organize_table",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ]
+      ],
+      "checkpoint": "/mnt/models/esi-final",
+      "policy_input": "task_subtask",
+      "downsampling": {
+        "mode": "error",
+        "config": {
+          "position_error_m": 0.002,
+          "rotation_error_rad": 0.02,
+          "max_skipped": 3,
+          "max_joint_jump_rad": 0.15,
+          "gripper_epsilon": 0.005,
+          "gripper_guard": 1,
+          "closing_hold_ticks": 15,
+          "gripper_reconstruction_error": 0.002,
+          "max_gripper_jump": 0.01
+        }
+      }
+    },
+    {
+      "experiment": "multitask10_round3_eval20_subtask_ds005_nohold_v1__eps0p005__imitate_sorting_sequence",
+      "task": "imitate_sorting_sequence",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ]
+      ],
+      "checkpoint": "/mnt/models/esi-final",
+      "policy_input": "task_subtask",
+      "downsampling": {
+        "mode": "error",
+        "config": {
+          "position_error_m": 0.002,
+          "rotation_error_rad": 0.02,
+          "max_skipped": 3,
+          "max_joint_jump_rad": 0.15,
+          "gripper_epsilon": 0.005,
+          "gripper_guard": 1,
+          "closing_hold_ticks": 15,
+          "gripper_reconstruction_error": 0.002,
+          "max_gripper_jump": 0.01
+        }
+      }
+    },
+    {
+      "experiment": "multitask10_round3_eval20_subtask_ds005_nohold_v1__eps0p005__stack_blocks_by_language",
+      "task": "stack_blocks_by_language",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ]
+      ],
+      "checkpoint": "/mnt/models/esi-final",
+      "policy_input": "task_subtask",
+      "downsampling": {
+        "mode": "error",
+        "config": {
+          "position_error_m": 0.002,
+          "rotation_error_rad": 0.02,
+          "max_skipped": 3,
+          "max_joint_jump_rad": 0.15,
+          "gripper_epsilon": 0.005,
+          "gripper_guard": 1,
+          "closing_hold_ticks": 15,
+          "gripper_reconstruction_error": 0.002,
+          "max_gripper_jump": 0.01
+        }
+      }
+    },
+    {
+      "experiment": "multitask10_round3_eval20_subtask_ds005_nohold_v1__eps0p005__classify_objects_by_language",
+      "task": "classify_objects_by_language",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ]
+      ],
+      "checkpoint": "/mnt/models/esi-final",
+      "policy_input": "task_subtask",
+      "downsampling": {
+        "mode": "error",
+        "config": {
+          "position_error_m": 0.002,
+          "rotation_error_rad": 0.02,
+          "max_skipped": 3,
+          "max_joint_jump_rad": 0.15,
+          "gripper_epsilon": 0.005,
+          "gripper_guard": 1,
+          "closing_hold_ticks": 15,
+          "gripper_reconstruction_error": 0.002,
+          "max_gripper_jump": 0.01
+        }
+      }
+    },
+    {
+      "experiment": "multitask10_round3_eval20_subtask_ds005_nohold_v1__eps0p005__sweep_blocks",
+      "task": "sweep_blocks",
+      "cases": [
+        [
+          "standard",
+          0
+        ],
+        [
+          "standard",
+          1
+        ]
+      ],
+      "checkpoint": "/mnt/models/esi-final",
+      "policy_input": "task_subtask",
+      "downsampling": {
+        "mode": "error",
+        "config": {
+          "position_error_m": 0.002,
+          "rotation_error_rad": 0.02,
+          "max_skipped": 3,
+          "max_joint_jump_rad": 0.15,
+          "gripper_epsilon": 0.005,
+          "gripper_guard": 1,
+          "closing_hold_ticks": 15,
+          "gripper_reconstruction_error": 0.002,
+          "max_gripper_jump": 0.01
+        }
+      }
+    }
+  ],
+  "scheduling": "cross_task_queue_v1",
+  "execution_source": "/path/to/source_snapshot"
+}

@@ -1,0 +1,112 @@
+{
+  "paths": {
+    "robodojo_source": "/opt/RoboDojo",
+    "robodojo_python": "/opt/envs/RoboDojo/bin/python",
+    "openpi_source": "/opt/RoboDojo/XPolicyLab/policy/Pi_05/openpi",
+    "openpi_python": "/opt/RoboDojo/XPolicyLab/policy/Pi_05/openpi/.venv/bin/python",
+    "codex_bin": "/usr/local/bin/codex",
+    "output_root": "/mnt/esi",
+    "auth_root": "/mnt/esi-private",
+    "account_pool_file": "/path/to/account_pool.local.json",
+    "official_checkpoint": "/mnt/models/robodojo_pi05/59999",
+    "sim_ssh_key": "/path/to/simulator_ssh_key",
+    "sim_robodojo_source": "/opt/RoboDojo",
+    "sim_python": "/opt/envs/RoboDojo/bin/python",
+    "sim_ssh_user": "root",
+    "final_checkpoint": "/mnt/models/esi-final"
+  },
+  "annotation": {
+    "profiles": [
+      "codex_a"
+    ],
+    "workers": 1,
+    "proxy_file": null
+  },
+  "collection": {
+    "workers": 8,
+    "auth_profile": "codex_a",
+    "slots": [
+      {
+        "ROLLOUT_SIM_HOST": "simulator-1.example.invalid",
+        "ROLLOUT_SIM_SSH_PORT": 22,
+        "POLICY_GPU": 0,
+        "SIM_GPU": 0,
+        "POLICY_PORT": 18830,
+        "SIM_PORT": 19113,
+        "ROLLOUT_SIM_REMOTE_PORT": 19113
+      },
+      {
+        "ROLLOUT_SIM_HOST": "simulator-2.example.invalid",
+        "ROLLOUT_SIM_SSH_PORT": 22,
+        "POLICY_GPU": 0,
+        "SIM_GPU": 0,
+        "POLICY_PORT": 18831,
+        "SIM_PORT": 19114,
+        "ROLLOUT_SIM_REMOTE_PORT": 19113
+      },
+      {
+        "ROLLOUT_SIM_HOST": "simulator-1.example.invalid",
+        "ROLLOUT_SIM_SSH_PORT": 22,
+        "POLICY_GPU": 0,
+        "SIM_GPU": 1,
+        "POLICY_PORT": 18832,
+        "SIM_PORT": 19115,
+        "ROLLOUT_SIM_REMOTE_PORT": 19114
+      },
+      {
+        "ROLLOUT_SIM_HOST": "simulator-2.example.invalid",
+        "ROLLOUT_SIM_SSH_PORT": 22,
+        "POLICY_GPU": 0,
+        "SIM_GPU": 1,
+        "POLICY_PORT": 18833,
+        "SIM_PORT": 19116,
+        "ROLLOUT_SIM_REMOTE_PORT": 19114
+      },
+      {
+        "ROLLOUT_SIM_HOST": "simulator-1.example.invalid",
+        "ROLLOUT_SIM_SSH_PORT": 22,
+        "POLICY_GPU": 0,
+        "SIM_GPU": 0,
+        "POLICY_PORT": 18834,
+        "SIM_PORT": 19117,
+        "ROLLOUT_SIM_REMOTE_PORT": 19115
+      },
+      {
+        "ROLLOUT_SIM_HOST": "simulator-2.example.invalid",
+        "ROLLOUT_SIM_SSH_PORT": 22,
+        "POLICY_GPU": 0,
+        "SIM_GPU": 0,
+        "POLICY_PORT": 18835,
+        "SIM_PORT": 19118,
+        "ROLLOUT_SIM_REMOTE_PORT": 19115
+      },
+      {
+        "ROLLOUT_SIM_HOST": "simulator-1.example.invalid",
+        "ROLLOUT_SIM_SSH_PORT": 22,
+        "POLICY_GPU": 0,
+        "SIM_GPU": 1,
+        "POLICY_PORT": 18836,
+        "SIM_PORT": 19119,
+        "ROLLOUT_SIM_REMOTE_PORT": 19116
+      },
+      {
+        "ROLLOUT_SIM_HOST": "simulator-2.example.invalid",
+        "ROLLOUT_SIM_SSH_PORT": 22,
+        "POLICY_GPU": 0,
+        "SIM_GPU": 1,
+        "POLICY_PORT": 18837,
+        "SIM_PORT": 19120,
+        "ROLLOUT_SIM_REMOTE_PORT": 19116
+      }
+    ]
+  },
+  "training": {
+    "num_nodes": 1,
+    "num_devices": 8,
+    "fsdp_devices": 8,
+    "per_device_batch_size": 8,
+    "gradient_accumulation_steps": 4,
+    "num_workers": 32,
+    "memory_fraction": 0.75
+  }
+}

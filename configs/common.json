@@ -1,0 +1,11 @@
+{
+  "llm": {
+    "$file": "llm.json"
+  },
+  "environment": {
+    "ROLLOUT_SIM_SSH_KEY": "${deployment.paths.sim_ssh_key}",
+    "ROLLOUT_SIM_ROBODOJO_SOURCE": "${deployment.paths.sim_robodojo_source}",
+    "ROLLOUT_SIM_PYTHON": "${deployment.paths.sim_python}",
+    "ROLLOUT_EVAL_EXCLUSIONS_FILE": ""
+  }
+}

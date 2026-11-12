@@ -1,0 +1,12 @@
+{
+  "extends": "common.json",
+  "stage": "evolution",
+  "run": {
+    "name": null,
+    "suite": null,
+    "output": "${deployment.paths.output_root}/prompt_evolution/${run.name}"
+  },
+  "config": {
+    "$file": "prompt_evolution.json"
+  }
+}

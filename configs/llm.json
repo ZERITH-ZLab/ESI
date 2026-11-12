@@ -1,0 +1,12 @@
+{
+  "rollout": {
+    "model": "gpt-6-astra",
+    "effort": "xhigh",
+    "image_max_edge": 480,
+    "auto_compact_token_limit": 96000
+  },
+  "annotation": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium"
+  }
+}

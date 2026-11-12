@@ -1,0 +1,18 @@
+{
+  "stage": "baseline_at_copy_time",
+  "source_commit": "4e4f0cb6fc95cf74fbfe52e6cb04ffb9103740fe",
+  "source_directory": "hybrid_rollout/robodojo/skill",
+  "source_sha256": {
+    "__init__.py": "1e8476463fbf6a79f8930dd8aec926a716f92db3cf95fb7db97bc220cd9daf90",
+    "run.py": "813b418d711f2f859d478d2b4adb12f5bb792ba409caa9f1be3c34486a8d51df",
+    "workspace.py": "cabfd886c79188eeb77d23b0f6bd8cebccb7cef158bb0ec4e5ab98c806f3c88a",
+    "SKILL.md": "4314afdd4439f3f7b38da4d98561c6acab5c85459a9659400be10dc843331ff5",
+    "gate_prompt.md": "5bb54e0e5b39387d3873f4d4b3eed695a3a682ac28df0dd219f69176ade9e58d",
+    "context/eef_control.md": "b483f5d76b51a8f027d4d6cbae1e6fe57ad9dcc6cb22160377de8dd6fc6a008d",
+    "context/teacher_context.md": "5f4e13050326eca382dd207b32736b2f125c11694f0f39bde286bf98b6424989"
+  },
+  "changes": [
+    "run.py imports shared schema, transport, image_preview and network_recovery from original skill package; all other copied content unchanged."
+  ],
+  "default_launcher_changed": false
+}

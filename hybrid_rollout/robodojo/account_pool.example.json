@@ -1,0 +1,5 @@
+{
+  "profiles": ["codex_a"],
+  "check_interval_seconds": 60,
+  "quota_recheck_seconds": 600
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "../common.json",
+  "stage": "annotation",
+  "route": "offline",
+  "run": {
+    "name": null,
+    "action": "prepare",
+    "inputs": [],
+    "batch": "${deployment.paths.output_root}/annotations/${run.name}"
+  },
+  "config": {}
+}

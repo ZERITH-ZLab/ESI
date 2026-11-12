@@ -1,0 +1,46 @@
+{
+  "index_root": "/mnt/esi/indexes/training",
+  "base_checkpoint": "/mnt/models/robodojo_pi05/59999",
+  "norm_stats_dir": "/mnt/esi/norm/training",
+  "openpi_source": "/opt/RoboDojo/XPolicyLab/policy/Pi_05/openpi",
+  "output": "/mnt/esi/training/8gpu_train_{mode}_run",
+  "sampling": {
+    "gpt_start_ratio": 0.5,
+    "random_ratio": 0.25,
+    "successful_episode_ratio": 0.7,
+    "seed": 0
+  },
+  "training": {
+    "seed": 0,
+    "num_steps": 6000,
+    "batch_size": 256,
+    "micro_batch_size": 64,
+    "num_workers": 32,
+    "cache_episodes": 4
+  },
+  "optimizer": {
+    "learning_rate": 2e-05,
+    "end_learning_rate": 1e-06,
+    "warmup_steps": 600,
+    "weight_decay": 1e-10,
+    "clip_gradient_norm": 1.0,
+    "b1": 0.9,
+    "b2": 0.95,
+    "eps": 1e-08
+  },
+  "checkpoint": {
+    "save_interval": 1000,
+    "max_to_keep": 2
+  },
+  "parallelism": {
+    "num_devices": 8,
+    "fsdp_devices": 8
+  },
+  "runtime": {
+    "require_gpu": true,
+    "jax_preallocate": true
+  },
+  "conditioning": {
+    "mode": "task"
+  }
+}

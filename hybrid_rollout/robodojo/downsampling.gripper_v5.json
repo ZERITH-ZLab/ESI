@@ -1,0 +1,15 @@
+{
+  "position_error_m": 0.002,
+  "rotation_error_rad": 0.02,
+  "max_skipped": 4,
+  "max_joint_jump_rad": 0.15,
+  "gripper_epsilon": 0.01,
+  "gripper_guard": 0,
+  "closing_hold_ticks": 10,
+  "gripper_reconstruction_error": 0.002,
+  "max_gripper_jump": 0.01,
+  "closing_hold_epsilon": 0.02,
+  "closing_phase_enabled": true,
+  "closing_settle_ticks": 2,
+  "closing_refresh_epsilon": 0.01
+}

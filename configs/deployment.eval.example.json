@@ -1,0 +1,17 @@
+{
+  "extends": "deployment.example.json",
+  "collection": {
+    "workers": 1,
+    "slots": [
+      {
+        "ROLLOUT_SIM_HOST": "simulator.example.invalid",
+        "ROLLOUT_SIM_SSH_PORT": 22,
+        "POLICY_GPU": 0,
+        "SIM_GPU": 0,
+        "POLICY_PORT": 18830,
+        "SIM_PORT": 19113,
+        "ROLLOUT_SIM_REMOTE_PORT": 19113
+      }
+    ]
+  }
+}

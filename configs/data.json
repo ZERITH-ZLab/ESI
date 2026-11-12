@@ -1,0 +1,19 @@
+{
+  "extends": "common.json",
+  "stage": "data",
+  "workers": 4,
+  "horizon": 50,
+  "min_valid": 15,
+  "run": {
+    "name": null,
+    "action": "export",
+    "annotation_run": null,
+    "output": null,
+    "exports": [],
+    "indexes": [],
+    "index": null,
+    "checkpoint": null,
+    "policy_version": null,
+    "collection_round": null
+  }
+}

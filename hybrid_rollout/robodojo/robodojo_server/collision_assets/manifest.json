@@ -1,0 +1,129 @@
+{
+  "schema": "pinned_PhysX_cooked_convex_FCL_v1",
+  "base_link": "base_link",
+  "sha256": {
+    "usd": "5723a835bf5627a935a8dabb3a44447725bd1465243ce791e221b3e990121d63",
+    "urdf": "7aaa308a1a5b6a213d914db86ba09ddd6252f25cb498ac9a148bfa6c7166a423",
+    "config": "78144692f9e1d483d054ca3d4043fc83cd43fa68bcb6e1113eca0b2393757f6b",
+    "cooked": "63d0ce70010896067dcec1abf4be824a7722752a004dfaa51b546f36db5e6bc9"
+  },
+  "usd_dependencies": {},
+  "pairs": [
+    [
+      "base_link",
+      "link3"
+    ],
+    [
+      "base_link",
+      "link4"
+    ],
+    [
+      "base_link",
+      "link5"
+    ],
+    [
+      "base_link",
+      "link6"
+    ],
+    [
+      "base_link",
+      "camera_base"
+    ],
+    [
+      "base_link",
+      "camera"
+    ],
+    [
+      "link1",
+      "link3"
+    ],
+    [
+      "link1",
+      "link4"
+    ],
+    [
+      "link1",
+      "link5"
+    ],
+    [
+      "link1",
+      "link6"
+    ],
+    [
+      "link1",
+      "camera_base"
+    ],
+    [
+      "link1",
+      "camera"
+    ],
+    [
+      "link2",
+      "link5"
+    ],
+    [
+      "link2",
+      "link6"
+    ],
+    [
+      "link2",
+      "camera_base"
+    ],
+    [
+      "link2",
+      "camera"
+    ],
+    [
+      "link3",
+      "link5"
+    ],
+    [
+      "link3",
+      "link6"
+    ],
+    [
+      "link3",
+      "camera_base"
+    ],
+    [
+      "link3",
+      "camera"
+    ],
+    [
+      "link4",
+      "link6"
+    ],
+    [
+      "link4",
+      "camera_base"
+    ]
+  ],
+  "piece_counts": {
+    "base_link": 1,
+    "link1": 1,
+    "link2": 1,
+    "link3": 32,
+    "link4": 1,
+    "link5": 1,
+    "link6": 1,
+    "camera_base": 1,
+    "camera": 1
+  },
+  "units": "meters",
+  "scope": "configured_22_robot_pairs_static_geometry_not_runtime_contacts",
+  "source_files": {
+    "usd": "ARX.usd",
+    "urdf": "X5A.urdf",
+    "config": "curobo.yml"
+  },
+  "usd_dependency_scope": "collision geometry prim stacks and mesh points; self-contained ARX.usd",
+  "unresolved_material_dependencies": [
+    "OmniPBR.mdl",
+    "gltf/pbr.mdl"
+  ],
+  "material_dependencies_affect_collision_geometry": false,
+  "config_identity": {
+    "algorithm": "curobo_yaml_without_install_paths_v1",
+    "sha256": "086cdbc167efd9b190edb73395e232ef615b72da08544f5fdcc084243efcae36"
+  }
+}

@@ -1,0 +1,51 @@
+diff --git a/env/planner_manager/curobo_planner.py b/env/planner_manager/curobo_planner.py
+index 311c075..610d3a1 100644
+--- a/env/planner_manager/curobo_planner.py
++++ b/env/planner_manager/curobo_planner.py
+@@ -150,6 +150,30 @@ class CuroboPlanner:
+             num_goalset=1,
+         )
+ 
++    @staticmethod
++    def _failure_diagnostics(result):
++        """Preserve native failure evidence without serializing large trajectories."""
++        if result is None:
++            return {"result_type": "None", "reason": "no_planner_result"}
++        details = {"result_type": type(result).__name__}
++        for name in (
++            "status", "success", "valid_query", "feasible", "position_error",
++            "rotation_error", "cspace_error", "solve_time", "total_time",
++        ):
++            value = getattr(result, name, None)
++            if value is None:
++                continue
++            if isinstance(value, torch.Tensor):
++                value = value.detach().cpu().tolist()
++            elif isinstance(value, np.ndarray):
++                value = value.tolist()
++            elif isinstance(value, np.generic):
++                value = value.item()
++            elif not isinstance(value, (str, int, float, bool, list, dict)):
++                value = str(value)
++            details[name] = value
++        return details
++
+     def plan_path(
+         self,
+         curr_joint_pos,
+@@ -187,6 +211,7 @@ class CuroboPlanner:
+         res_result = dict()
+         if result is None or not self._is_success(result.success):
+             res_result["status"] = "Fail"
++            res_result["diagnostics"] = self._failure_diagnostics(result)
+             return res_result
+         else:
+             interpolated = result.get_interpolated_plan()
+@@ -221,6 +246,7 @@ class CuroboPlanner:
+         res_result = dict()
+         if result is None or not self._is_success(result.success):
+             res_result["status"] = "Fail"
++            res_result["diagnostics"] = self._failure_diagnostics(result)
+             return res_result
+ 
+         interpolated = result.get_interpolated_plan()

@@ -1,0 +1,23 @@
+{
+  "backend": "codex",
+  "model": "gpt-6.1-sol",
+  "profiles": [
+    "codex_c",
+    "codex_c_2",
+    "codex_c_3",
+    "codex_c_4"
+  ],
+  "shared_root": "/mnt/rollout/robodojo_mixed_control",
+  "codex_bin": "/usr/local/bin/codex",
+  "proxy_file": null,
+  "reasoning_effort": "medium",
+  "base_url": "https://api.openai.com/v1",
+  "api_mode": "responses",
+  "api_key_env": "SUBTASK_API_KEY",
+  "workers": 4,
+  "timeout_seconds": 1800,
+  "max_output_tokens": 48000,
+  "max_input_chars": 900000,
+  "http_retries": 2,
+  "max_repairs": 3
+}
