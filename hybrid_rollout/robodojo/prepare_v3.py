@@ -52,9 +52,8 @@ def prepare(parent_path, prefix):
     if CONTEXT_VERSION != 'v3' or not re.fullmatch(r'robodojo_[A-Za-z0-9_]+', prefix):
         raise ValueError('Require v3 source and an explicit robodojo campaign name')
     parent = campaign.optional(parent_path)
-    shared = Path(parent['shared_root']).resolve()
-    if not shared.is_relative_to('/mnt/rollout'):
-        raise ValueError('Use the requested shared project storage')
+    from .output_paths import validate_output_root
+    shared = validate_output_root(parent['shared_root'])
     if sha256(parent['scope_file']) != parent['scope_file_sha256']:
         raise ValueError('Original scope changed')
     panel, scope, queue = revised_inputs(read_panel(parent['eval_manifest'], parent['panel_sha256']),

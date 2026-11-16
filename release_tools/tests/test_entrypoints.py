@@ -180,6 +180,32 @@ def test_required_values_and_preview(capsys,tmp_path):
     assert not list(tmp_path.iterdir())
 
 
+@pytest.mark.parametrize('route', ['collection/bootstrap.json', 'collection/feedforward.json',
+                                  'eval/final.json', 'eval/baseline.json'])
+def test_output_directory_portability(route, tmp_path, capsys, monkeypatch):
+    output = tmp_path/'new outputs'
+    args = ['--config', str(ROOT/'configs'/route), '--deployment',
+            str(ROOT/'configs/deployment.example.json'), '--set', 'run.name=portable',
+            '--set', 'run.checkpoint=/models/policy',
+            '--set', f'deployment.paths.output_root={output}']
+    main([*args, '--show-config'])
+    assert json.loads(capsys.readouterr().out)['config']['deployment']['paths']['output_root'] == str(output)
+    assert not output.exists()
+    # Exercise configuration freezing and dispatch without launching services.
+    import release_tools.__main__ as entry
+    import hybrid_rollout.robodojo.pi05_server.checkpoint as checkpoint
+    monkeypatch.setattr(checkpoint, 'checkpoint_identity', lambda path: {'checkpoint_sha256': 'test-identity'})
+    calls = []
+    monkeypatch.setattr(entry.subprocess, 'call', lambda cmd, **kw: calls.append((cmd, kw)) or 0)
+    assert main(args) == 0
+    assert calls[0][1]['env']['ROLLOUT_SHARED_ROOT'] == str(output)
+    assert (output/'release_runs/portable').is_dir()
+    with pytest.raises(ValueError, match='absolute path'):
+        main([*args, '--set', 'deployment.paths.output_root=relative/outputs', '--show-config'])
+    with pytest.raises(ValueError, match='outside the source'):
+        main([*args, '--set', f'deployment.paths.output_root={ROOT}/outputs', '--show-config'])
+
+
 def test_single_node_does_not_inherit_scheduler_world_size(tmp_path,monkeypatch):
     monkeypatch.setenv('WORLD_SIZE','16')
     cfg=recipe('training/round1.json','run.index=/data/index','run.norm=/data/norm')

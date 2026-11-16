@@ -134,9 +134,8 @@ def prepare(args):
         raise ValueError('Explicit quota type required')
     if not re.fullmatch(r'[A-Za-z0-9_-]+', args.experiment_prefix):
         raise ValueError('Invalid campaign identifier')
-    shared = args.shared_root.resolve()
-    if not shared.is_relative_to('/mnt/rollout'):
-        raise ValueError('Campaign logs and state must use the requested shared storage')
+    from .output_paths import validate_output_root
+    shared = validate_output_root(args.shared_root)
     panel = read_panel(args.eval_manifest)
     scope = optional(args.scope)
     if scope.get('source_panel_sha256') != panel['panel_sha256']:

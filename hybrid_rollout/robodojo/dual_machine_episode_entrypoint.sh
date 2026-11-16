@@ -38,6 +38,9 @@ SSH_USER="${ROLLOUT_SIM_SSH_USER:-root}"
 if [[ ! "$SSH_USER" =~ ^[A-Za-z0-9_][A-Za-z0-9_.-]*\$?$ ]]; then
     echo 'Invalid simulator SSH username' >&2; exit 2
 fi
+SHARED_ROOT="${ROLLOUT_SHARED_ROOT:-/mnt/esi}"
+env PYTHONPATH="$CODE_ROOT" "$ROBODOJO_PYTHON" -m hybrid_rollout.robodojo.output_paths \
+    "$SHARED_ROOT" --source-root "$CODE_ROOT"
 env PYTHONPATH="$CODE_ROOT" "$ROBODOJO_PYTHON" -m hybrid_rollout.robodojo.deployment
 CODE_ROOT="$ROLLOUT_ARCHIVE/source_snapshot"
 REMOTE_ROOT="$CODE_ROOT"
@@ -45,7 +48,6 @@ cd "$CODE_ROOT"
 export PYTHONDONTWRITEBYTECODE=1
 REMOTE_ROBODOJO="${ROLLOUT_SIM_ROBODOJO_SOURCE:-/opt/RoboDojo}"
 REMOTE_PYTHON="${ROLLOUT_SIM_PYTHON:-/opt/envs/RoboDojo/bin/python}"
-SHARED_ROOT="${ROLLOUT_SHARED_ROOT:-/mnt/esi}"
 RUN_ROOT="$ROLLOUT_ARCHIVE/dual_machine"
 STARTUP_TIMEOUT="${ROLLOUT_STARTUP_TIMEOUT:-900}"
 # batch.py copies the frozen panel beside case_NNN.json.  Use that shared copy
@@ -55,9 +57,14 @@ REMOTE_PID="$RUN_ROOT/simulator.pid"; REMOTE_LOG="$RUN_ROOT/simulator.log"
 TUNNEL_PID=''; POLICY_PID=''; CONTROLLER_PID=''; SIM_REQUESTED=0
 source "$CODE_ROOT/hybrid_rollout/robodojo/pi05_load_lock.sh"
 q() { printf '%q' "$1"; }
-ssh_cmd() { ssh -i "$SSH_KEY" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=accept-new \
+SSH_COMMAND=(ssh -i "$SSH_KEY" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=accept-new
     -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=2 \
-    -p "$SSH_PORT" "$SSH_USER@$REMOTE_HOST" "$@"; }
+    -p "$SSH_PORT" "$SSH_USER@$REMOTE_HOST")
+ssh_cmd() { "${SSH_COMMAND[@]}" "$@"; }
+# Check shared-file visibility before loading either the simulator or policy.
+env PYTHONPATH="$CODE_ROOT" "$ROBODOJO_PYTHON" -m hybrid_rollout.robodojo.output_paths \
+    "$SHARED_ROOT" --source-root "$CODE_ROOT" --remote-python "$REMOTE_PYTHON" \
+    --ssh-command "${SSH_COMMAND[@]}"
 remote_alive() {
     ssh_cmd bash "$(q "$REMOTE_ROOT/hybrid_rollout/robodojo/remote_simulator.sh")" status "$(q "$REMOTE_PID")" \
         >/dev/null 2>&1

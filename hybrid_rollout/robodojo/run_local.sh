@@ -47,7 +47,8 @@ unset OPENAI_API_KEY OPENAI_BASE_URL CODEX_API_KEY
 PYTHONPATH="$CODE_ROOT" "$ROBODOJO_PYTHON" -m hybrid_rollout.robodojo.codex_backend.validate \
     "$ROLLOUT_CODEX_CONFIG" --home-config "$ROLLOUT_CODEX_HOME_DIR/config.toml" \
     --shared-root "${ROLLOUT_SHARED_ROOT:-$RUNTIME_ROOT}"
-[[ "$RESULTS_ROOT" == /mnt/* ]] || { echo 'RESULTS_ROOT must be an absolute path below /mnt' >&2; exit 2; }
+env PYTHONPATH="$CODE_ROOT" "$ROBODOJO_PYTHON" -m hybrid_rollout.robodojo.output_paths \
+    "$RESULTS_ROOT" --source-root "$CODE_ROOT"
 "$ROBODOJO_PYTHON" -c 'import importlib.metadata as m; assert m.version("isaacsim").startswith("5.1."), "RoboDojo checkout requires Isaac Sim 5.1; do not silently reuse RoboLab 5.0"'
 "$ROBODOJO_PYTHON" -c 'import socket,sys; ports=[int(p) for p in sys.argv[1:]]; assert len(set(ports))==len(ports); sockets=[socket.socket() for _ in ports]; [s.bind(("127.0.0.1",p)) for s,p in zip(sockets,ports)]' "$POLICY_PORT" "$SIM_PORT"
 mkdir -p "$RESULTS_ROOT"

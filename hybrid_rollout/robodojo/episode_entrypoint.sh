@@ -13,7 +13,8 @@ ROLLOUT_EVAL_SEED="${ROLLOUT_EVAL_SEED:?Set ROLLOUT_EVAL_SEED from the evaluatio
 : "${ROLLOUT_ARCHIVE:?}"
 ROLLOUT_ATTEMPT="${ROLLOUT_ATTEMPT:-0}"
 ROLLOUT_SHARED_ROOT="${ROLLOUT_SHARED_ROOT:-/mnt/rollout/robodojo_mixed_control}"
-[[ "$ROLLOUT_SHARED_ROOT" == /mnt/* ]] || { echo 'ROLLOUT_SHARED_ROOT must be below /mnt' >&2; exit 2; }
+env PYTHONPATH="$CODE_ROOT" "$ROBODOJO_PYTHON" -m hybrid_rollout.robodojo.output_paths \
+    "$ROLLOUT_SHARED_ROOT" --source-root "$CODE_ROOT"
 
 for identifier in "$ROLLOUT_EXPERIMENT_ID" "$ROBODOJO_TASK" "$ROLLOUT_REPLICA_ID" "$ROLLOUT_ATTEMPT"; do
     [[ "$identifier" =~ ^[A-Za-z0-9_-]+$ ]] || { echo "Invalid rollout identifier: $identifier" >&2; exit 2; }

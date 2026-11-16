@@ -12,7 +12,7 @@ The copied file inherits `deployment.example.json` and selects one worker for in
 
 `paths.sim_ssh_user` is the default remote username (root only as a compatibility default). An individual slot may override it with `ROLLOUT_SIM_SSH_USER`. This applies to remote checks, simulator lifecycle and SSH tunnels. The user must have access to the GPU and read/write permissions on the experiment directory; root privileges are not required by the launcher.
 
-Use the same absolute path for shared experiment storage on all participating nodes. The controller writes a source snapshot there and the simulator runs that snapshot. A directory with the same name but different contents is not shared storage. For a single-machine installation, configure SSH to that machine and budget GPU memory for both services. Check SSH key login before starting:
+Set `paths.output_root` to a writable absolute directory outside the source repository, such as `/data/esi` or `/home/user/esi-output`; `/mnt` is not required. Use the same absolute path for shared experiment storage on all participating nodes. The controller writes a source snapshot there and the simulator runs that snapshot. A directory with the same name but different contents is not shared storage. Before loading services, the launcher checks that a temporary file can be read and updated remotely and that the update is visible locally. For a single-machine installation, configure SSH to that machine and budget GPU memory for both services. Check SSH key login before starting:
 
 ```bash
 ssh -i /path/to/key -p 22 your_user@your_simulator_host 'hostname'

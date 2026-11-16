@@ -187,10 +187,9 @@ def run_batch(env, *, episode_command=None):
         raise ValueError('Resume identity missing; use launch_dual.sh, not legacy exports')
     if episode_command is None:
         verify_assets(panel, env['ROBODOJO_SOURCE'], cases, verify_source=verify_source)
-    shared = Path(env.setdefault('ROLLOUT_SHARED_ROOT', env.get('RUNTIME_ROOT',
-        '/mnt/rollout/robodojo_mixed_control'))).resolve()
-    if episode_command is None and (not shared.is_relative_to('/mnt') or shared == Path('/mnt')):
-        raise ValueError('Shared output root must be below /mnt')
+    from .output_paths import validate_output_root
+    shared = validate_output_root(env.setdefault('ROLLOUT_SHARED_ROOT', env.get('RUNTIME_ROOT',
+        '/mnt/rollout/robodojo_mixed_control')), source_root=env.get('CODE_ROOT'))
     experiment, replica = env['ROLLOUT_EXPERIMENT_ID'], env['ROLLOUT_REPLICA_ID']
     batch_root = shared/'results'/experiment/'_replicas'/f'replica_{replica}'/f'attempt_{attempt}'
     rerun_of = json.loads(env.get('ROLLOUT_RERUN_REFERENCE', 'null'))

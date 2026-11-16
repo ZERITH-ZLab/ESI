@@ -59,9 +59,8 @@ if [[ "${ROLLOUT_EVALUATION_METHOD:-pi05_plus_gpt}" == pi05_plus_gpt ]]; then
 fi
 source "$ENTRY_ROOT/tool_environment.sh"
 umask 077
-[[ "$ROLLOUT_SHARED_ROOT" == /mnt/rollout/* ]] || {
-    echo 'Rollout output must be below /mnt/rollout' >&2; exit 2;
-}
+env PYTHONPATH="$CODE_ROOT" "$ROBODOJO_PYTHON" -m hybrid_rollout.robodojo.output_paths \
+    "$ROLLOUT_SHARED_ROOT" --source-root "$CODE_ROOT"
 for identifier in "${ROLLOUT_EXPERIMENT_ID:?}" "${ROLLOUT_REPLICA_ID:?}" "${ROLLOUT_ATTEMPT:-0}"; do
     [[ "$identifier" =~ ^[A-Za-z0-9_-]+$ ]] || { echo 'Invalid rollout identifier' >&2; exit 2; }
 done

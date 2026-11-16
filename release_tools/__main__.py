@@ -207,6 +207,8 @@ def main(argv=None):
     a=p.parse_args(argv);cfg=load(a.config,a.deployment,a.set)
     if not isinstance(cfg.get('run',{}).get('name'),str) or not re.fullmatch(r'[A-Za-z0-9_-]+',cfg['run']['name']):
         raise ValueError('Set run.name to a new explicit experiment name')
+    from hybrid_rollout.robodojo.output_paths import validate_output_root
+    validate_output_root(cfg['deployment']['paths']['output_root'], source_root=ROOT, create=not a.show_config)
     directory=Path(cfg['deployment']['paths']['output_root'])/'release_runs'/cfg['run']['name']/cfg['stage']
     if cfg['stage'] in ('annotation','data','training'):
         directory=directory/cfg['run']['action']

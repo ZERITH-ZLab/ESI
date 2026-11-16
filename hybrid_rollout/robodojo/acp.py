@@ -63,7 +63,8 @@ def prepare(args):
         raise ValueError('Managed account auth must stay in its persistent isolated profile')
     if not getattr(args, 'review_without_credentials', False):
         validate_credential(identity['name'], args.shared_root, credential)
-    runtime = args.shared_root.resolve()
+    from .output_paths import validate_output_root
+    runtime = validate_output_root(args.shared_root, source_root=repo)
     panel = read_panel(args.eval_manifest)
     cases = selected_cases(panel, args.task, args.replica_id, args.count, args.case_id)
     rerun_of = (make_rerun_reference(runtime, panel, args.case_id, args.rerun_v1_archive)
@@ -71,10 +72,6 @@ def prepare(args):
     if args.case_id:
         require_available(runtime, panel, args.case_id, rerun_of=rerun_of, method=method)
     verify_assets(panel, runtime/'src/RoboDojo', cases)
-    if not runtime.is_relative_to('/mnt/rollout'):
-        raise ValueError('New cluster outputs must be below /mnt/rollout')
-    if not credential.is_relative_to('/mnt/rollout'):
-        raise ValueError('Store the private rollout credential on the requested project share')
     root = runtime/'cluster'/args.experiment_id/f'replica_{args.replica_id}'
     root.parent.mkdir(parents=True, exist_ok=True)
     root.mkdir()  # Never rewrite a submitted job's source or command.
