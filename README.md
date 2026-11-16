@@ -106,3 +106,19 @@ bash scripts/eval.sh --set run.name=esi_eval
 Original ESI contributions are licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
 
 Inherited code and third-party components retain their original licenses. See [NOTICE](NOTICE) and [third-party notices](THIRD_PARTY_NOTICES.md).
+
+## Citation
+
+If you use ESI in your research, please cite our [arXiv technical report](https://arxiv.org/abs/2611.18176):
+
+```bibtex
+@misc{cai2026esi,
+  title = {ESI: An Embodied Self-Improvement Flywheel for LLM-VLA Agents},
+  author = {Cai, Yundi and Wang, Zihan and Han, Chenxi and Cheng, Yi and Liu, Houde and Wang, Zilei},
+  year = {2026},
+  eprint = {2611.18176},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.RO},
+  url = {https://arxiv.org/abs/2611.18176}
+}
+```

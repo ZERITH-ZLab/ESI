@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use ESI in your research, please cite the arXiv technical report in preferred-citation."
+title: "ESI: An Embodied Self-Improvement Flywheel for LLM-VLA Agents"
+authors:
+  - family-names: Cai
+    given-names: Yundi
+  - family-names: Wang
+    given-names: Zihan
+  - family-names: Han
+    given-names: Chenxi
+  - family-names: Cheng
+    given-names: Yi
+  - family-names: Liu
+    given-names: Houde
+  - family-names: Wang
+    given-names: Zilei
+repository-code: "https://github.com/ZERITH-ZLab/ESI"
+preferred-citation:
+  type: report
+  title: "ESI: An Embodied Self-Improvement Flywheel for LLM-VLA Agents"
+  authors:
+    - family-names: Cai
+      given-names: Yundi
+    - family-names: Wang
+      given-names: Zihan
+    - family-names: Han
+      given-names: Chenxi
+    - family-names: Cheng
+      given-names: Yi
+    - family-names: Liu
+      given-names: Houde
+    - family-names: Wang
+      given-names: Zilei
+  year: 2026
+  number: "arXiv:2611.18176"
+  url: "https://arxiv.org/abs/2611.18176"
