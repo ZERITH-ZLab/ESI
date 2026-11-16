@@ -101,6 +101,8 @@ bash scripts/eval.sh --set run.name=esi_eval
 
 首轮使用 `configs/collection/bootstrap.json` 和 `configs/annotation/offline.json`；后续使用 `feedforward.json` 和 `online.json`，将新 checkpoint 配置为下一轮采集的模型。训练默认采用 subtask 配方，也可显式选择 task；自动 prompt 更新默认关闭。阶段参数、数据路径与多卡部署方式见上面的配置参考。
 
-## 许可
+## License
 
-见 [LICENSE](LICENSE) 和[第三方声明](THIRD_PARTY_NOTICES.md)。外部源码、资产和权重遵循各自许可。
+Original ESI contributions are licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
+
+Inherited code and third-party components retain their original licenses. See [NOTICE](NOTICE) and [third-party notices](THIRD_PARTY_NOTICES.md).
