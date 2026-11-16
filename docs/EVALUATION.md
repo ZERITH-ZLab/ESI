@@ -1,4 +1,4 @@
-# Run the final ESI evaluation
+# ESI evaluation
 
 Complete [installation](INSTALLATION.md) and [checkpoint preparation](CHECKPOINTS.md) first. Run the commands below from the ESI repository root on the controller/policy node.
 
@@ -61,7 +61,7 @@ bash scripts/eval.sh --set run.name=esi_final_eval --show-config
 bash scripts/eval.sh --set run.name=esi_final_eval
 ```
 
-The model root defaults to `/mnt/models/esi-final` via `paths.final_checkpoint`. Missing weights cause an error, not a fallback to the official checkpoint. The default panel is 200 cases, with no inherited exclusions. Plan/schema/SSH tests are not a substitute for a completed evaluation.
+The model root defaults to `/mnt/models/esi-final` via `paths.final_checkpoint`. Missing weights cause an error, not a fallback to the official checkpoint. The default panel contains 200 cases.
 
 Outputs are under `paths.output_root`, including `release_runs/esi_final_eval/eval/` for resolved configuration. The native queue prints its result and progress paths. Keep the source snapshot and raw results for resume and statistics. Repeat the same command to resume the same experiment; change `run.name` when changing model, prompt, paths or recipe. For a new experimental repeat, always use a new name.
 
