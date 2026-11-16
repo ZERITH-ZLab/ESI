@@ -1,12 +1,10 @@
 Project: ESI: An Embodied Self-Improvement Flywheel for LLM-VLA Agents
 
+Original ESI contributions: Copyright 2026 Zerith Robotics.
+
 Original research concept, system architecture, and initial implementation: Yundi Cai.
 
 Institutional support: ZERITH.
-
-Copyright holder for original ESI contributions: pending confirmation.
-The contribution and support acknowledgments above do not determine legal
-copyright ownership.
 
 This project includes material derived from GPT-as-Policy.
 Copyright (c) 2026 Yu-Mool Shu and Lipxin Zheng
