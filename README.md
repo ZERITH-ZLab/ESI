@@ -1,4 +1,12 @@
-# ESI: A Self-Improving Flywheel for LLM–VLA Agents
+<h1 align="center">ESI: An Embodied Self-Improvement Flywheel for LLM-VLA Agents</h1>
+
+<hr>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2611.18176"><img src="https://img.shields.io/badge/arXiv-2611.18176-b31b1b?style=flat&amp;labelColor=555" alt="arXiv 2611.18176"></a>
+  &nbsp;
+  <a href="https://www.zerith.com/blog/esi/"><img src="https://img.shields.io/badge/Project_Page-green?style=flat" alt="Project Page"></a>
+</p>
 
 ESI 将 LLM 规划与 VLA 策略结合，通过采集、子任务标注与训练持续改进系统。
 
