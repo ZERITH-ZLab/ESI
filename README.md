@@ -1,33 +1,73 @@
 <h1 align="center">ESI: An Embodied Self-Improvement Flywheel for LLM-VLA Agents</h1>
 
-<hr>
-
 <p align="center">
   <a href="https://arxiv.org/abs/2611.18176"><img src="https://img.shields.io/badge/arXiv-2611.18176-b31b1b?style=flat&amp;labelColor=555" alt="arXiv 2611.18176"></a>
   &nbsp;
   <a href="https://www.zerith.com/blog/esi/"><img src="https://img.shields.io/badge/Project_Page-green?style=flat" alt="Project Page"></a>
 </p>
 
-ESI 将 LLM 规划与 VLA 策略结合，通过采集、子任务标注与训练持续改进系统。
+ESI 将 LLM 的规划与纠正能力和 VLA 的动作执行能力结合，通过环境交互持续改善两者的协作。飞轮按 **采集 → 子任务标注 → 数据准备 → 训练 → 下一轮采集** 迭代，也支持可选的经验驱动 prompt 更新。
 
-## 基础环境
+<p align="center">
+  <a href="https://www.zerith.com/blog/esi/">
+    <img src="assets/esi_overview.png" width="780" alt="ESI 飞轮：LLM 与 VLA 协作采集经验，再将经验用于指导与策略更新，进入下一轮交互。">
+  </a>
+</p>
 
-| 项目 | 要求或推荐配置 |
+<p align="center"><em>论文 Figure 1：从协作执行到经验学习。点击图片查看交互演示与执行视频。</em></p>
+
+## 部署准备
+
+当前提供 RoboDojo 仿真环境的部署与评测实现。外部项目、资产和模型需单独安装或下载，具体版本与必要补丁见[安装说明](docs/INSTALLATION.md)。
+
+| 项目 | 推荐配置 |
 | --- | --- |
-| 系统 | Linux x86_64，推荐 Ubuntu 22.04 |
-| CUDA | 推荐 CUDA Toolkit 12.8；容器安装建议选择含编译工具的 `devel` 基础环境 |
-| Python | Python 3.11；模拟器与 OpenPI 使用独立环境 |
-| 模拟器 | Isaac Sim 5.1.0，配合安装教程指定的 RoboDojo、IsaacLab 和 cuRobo 版本 |
-| 模拟器 GPU | 支持 RTX 渲染的 NVIDIA GPU，例如 RTX 4090 |
-| 策略／训练 GPU | 与所用 CUDA/JAX 版本兼容且显存足够的 NVIDIA GPU，可与模拟器分机部署 |
+| 系统与 CUDA | Linux x86_64，Ubuntu 22.04、CUDA Toolkit 12.8；容器建议使用 `devel` 环境 |
+| Python | Python 3.11，RoboDojo 与 OpenPI 使用独立环境 |
+| 模拟器 | Isaac Sim 5.1.0，搭配指定版本的 RoboDojo、XPolicyLab、IsaacLab 和 cuRobo |
+| 硬件 | 模拟器使用 RTX 渲染 GPU（如 RTX 4090）；VLA 推理／训练可使用独立计算 GPU |
 
-上述操作系统和 CUDA 组合是推荐安装起点，不限定唯一镜像。A100/H100 等无 RT Cores 的计算卡可用于模型计算，不能替代模拟器所需的 RTX 渲染 GPU。宿主机驱动须兼容 CUDA 与 Isaac Sim；容器还需启用 GPU 和图形支持。具体要求见[安装教程](docs/INSTALLATION.md#基础环境与容器)。
+推荐目录如下，路径可在部署配置中修改。保留外部项目内部的目录结构：
 
-## 复现最终 ESI 评测
+```text
+/opt/
+├── ESI/                                      # 本仓库
+├── RoboDojo/
+│   ├── Assets -> /mnt/robodojo/Assets
+│   ├── XPolicyLab/policy/Pi_05/openpi/        # OpenPI 源码及 .venv
+│   └── third_party/                          # IsaacLab、cuRobo
+└── envs/RoboDojo/                            # 模拟器与控制工具环境
+/mnt/
+├── robodojo/Assets/                          # 仿真资产
+├── models/esi-final/                         # ESI 模型
+├── esi/                                     # 轨迹、标注、训练与评测输出
+└── esi-private/                             # 账号认证文件
+```
 
-默认评测使用最终 ESI checkpoint、GPT 前馈子任务和项目提供的任务指导，采用 benchmark 原生预算与评分。默认评测集为 10 个任务，每任务 20 个 case。
+可单机部署，也可将模拟器与策略服务分机部署。入口通过 SSH 启动模拟器，单机时连接本机；多机时，输出目录必须在两端以相同绝对路径访问同一份共享存储。A100/H100 等计算卡不能替代模拟器所需的 RTX 渲染 GPU。
 
-最终权重已发布至 [Hugging Face：ESI-pi05](https://huggingface.co/Embodied-Self-Improvement/ESI-pi05)，参数与归一化文件共约 11.6 GiB。安装 Hugging Face CLI 后，下载到默认目录：
+## 项目结构与配置
+
+| 目录 | 用途 |
+| --- | --- |
+| `scripts/` | 采集、标注、数据准备、训练和评测入口 |
+| `configs/` | 部署参数、模型设置及各阶段配方 |
+| `hybrid_rollout/robodojo/` | LLM–VLA 控制流程、模拟器与策略服务、prompt 和 skill |
+| `data_processing/` | 子任务标注、训练索引、采样与训练 |
+| `patches/` | 外部依赖的集成补丁 |
+
+首次部署从单 worker 模板开始，在仓库根目录执行（已有本地配置时不要覆盖）：
+
+```bash
+cp -n configs/deployment.eval.example.json configs/deployment.local.json
+export ESI_PYTHON=/opt/envs/RoboDojo/bin/python
+```
+
+在 `configs/deployment.local.json` 中填写路径、SSH 用户／主机、GPU、并行容量和账号池位置，并完成账号登录。LLM 设置在 `configs/llm.json`，任务在 `configs/tasks.json`，训练参数在 `configs/training/`；其余参数沿用配方即可。账号配置和各阶段完整命令见[配置参考](docs/CONFIGURATION.md)。
+
+## ESI 评测
+
+下载 [ESI-pi05 模型](https://huggingface.co/Embodied-Self-Improvement/ESI-pi05)（约 11.6 GiB）：
 
 ```bash
 hf download Embodied-Self-Improvement/ESI-pi05 \
@@ -36,36 +76,31 @@ hf download Embodied-Self-Improvement/ESI-pi05 \
   --local-dir /mnt/models/esi-final
 ```
 
-命令固定权重版本；CLI 安装、目录结构与文件校验见 [CHECKPOINTS.md](docs/CHECKPOINTS.md)。下载目录需有写权限和足够空间。
-
-1. 按[安装教程](docs/INSTALLATION.md)安装 RoboDojo、XPolicyLab/OpenPI、Isaac Sim/IsaacLab、cuRobo 和资产。教程包含推荐路径文件树与必要补丁。
-2. 将最终权重放到 `/mnt/models/esi-final`，或在部署配置中填写实际路径。
-3. 按[评测部署教程](docs/EVALUATION.md)配置设备、路径和账号。模型与策略已有默认配置；主机地址、认证、GPU 和并行容量需要根据自己的设备填写。
-4. 在仓库根目录执行：
+`paths.final_checkpoint` 应指向包含 `params/` 和 `assets/` 的下载目录。环境与账号配置完成后，启动评测：
 
 ```bash
-# 使用部署配置中的控制工具 Python 环境。
-export ESI_PYTHON=/opt/envs/RoboDojo/bin/python
-bash scripts/eval.sh --set run.name=esi_final_eval --show-config
-bash scripts/eval.sh --set run.name=esi_final_eval
+bash scripts/eval.sh --set run.name=esi_eval --show-config
+bash scripts/eval.sh --set run.name=esi_eval
 ```
 
-入口自动启动模拟器、π05 服务与 GPT 控制器。长任务建议在 tmux 内运行。恢复时使用相同命令和配置，已完成 episode 会保留；配置预览本身不检查 GPU、SSH 或账号是否可用。
+默认使用发布的 ESI 模型和 GPT 子任务指导，评测 10 个任务、每任务 20 个 case，采用 benchmark 原生预算与评分。入口自动启动所需服务；`--show-config` 仅预览配置。
 
-## 其他路线
+基准评测使用 `--config configs/eval/baseline.json`，需另行准备 RoboDojo 预训练权重并配置 `paths.official_checkpoint`。长任务建议在 tmux 内运行；恢复使用原命令和配置，修改实验设置时换一个 `run.name`。
 
-| 路线 | 入口 | 教程 |
+## 飞轮训练
+
+各阶段可独立启动，依次使用上一阶段的产物：
+
+| 阶段 | 入口 | 输入 → 输出 |
 | --- | --- | --- |
-| 完整后训练飞轮 | `scripts/collect.sh`、`annotate.sh`、`data.sh`、`train.sh` | [分阶段工作流](docs/CONFIGURATION.md) |
-| 基准评测 | `scripts/eval.sh --config configs/eval/baseline.json` | [评测部署](docs/EVALUATION.md) |
-| 可选自动 prompt 迭代 | `scripts/evolve.sh` | [Prompt 迭代](hybrid_rollout/robodojo/prompt_evolution/README.md) |
+| 采集 | `scripts/collect.sh` | 模型与任务 → 交互轨迹 |
+| 标注 | `scripts/annotate.sh` | 轨迹 → 子任务及结果标注 |
+| 数据准备 | `scripts/data.sh` | 轨迹与标注 → 导出数据、训练索引与归一化统计 |
+| 训练 | `scripts/train.sh` | 数据索引与模型 → 更新后的 checkpoint |
+| 可选 prompt 更新 | `scripts/evolve.sh` | 采集经验 → 供后续运行选择的 prompt bundle |
 
-自动 prompt 迭代默认关闭。飞轮各阶段可独立运行，不要求用一个命令编排所有轮次。
+首轮使用 `configs/collection/bootstrap.json` 和 `configs/annotation/offline.json`；后续使用 `feedforward.json` 和 `online.json`，将新 checkpoint 配置为下一轮采集的模型。训练默认采用 subtask 配方，也可显式选择 task；自动 prompt 更新默认关闭。阶段参数、数据路径与多卡部署方式见上面的配置参考。
 
-## 依赖
+## 许可
 
-外部源码、完整资产、账号和 checkpoint 需单独准备，见[依赖说明](docs/DEPENDENCIES.md)。部署后请先按安装教程进行环境检查和小规模试运行。
-
-高级配置见 [CONFIGURATION.md](docs/CONFIGURATION.md)，快照与恢复机制见 [EVAL_SNAPSHOTS.md](docs/EVAL_SNAPSHOTS.md)。部署时使用 `scripts/` 和 `configs/` 中的统一入口。
-
-许可见 [LICENSE](LICENSE) 和[第三方声明](THIRD_PARTY_NOTICES.md)。外部源码、资产和权重遵循各自许可。
+见 [LICENSE](LICENSE) 和[第三方声明](THIRD_PARTY_NOTICES.md)。外部源码、资产和权重遵循各自许可。
